@@ -30,19 +30,20 @@
     "frameworks": [
         {
             "name": "ext",
-            "version": "4.2.1",
             "type": "desktop",
+            "version": "6.0.0",
             "theme": "classic",
             "src": [
-                "http://cdn.sencha.com/ext/gpl/{version}/ext-all-debug.js"
+                "http://cdnjs.cloudflare.com/ajax/libs/extjs/{version}/ext-all-debug.js",
+                "http://cdnjs.cloudflare.com/ajax/libs/extjs/classic/{version}/theme-{theme}/theme-{theme}-debug.js"
             ],
             "res": [
-                "http://cdn.sencha.com/ext/gpl/{version}/resources/ext-theme-{theme}/ext-theme-{theme}-all.css"
+                "http://cdnjs.cloudflare.com/ajax/libs/extjs/classic/{theme}/theme-{theme}/resources/theme-{theme}-all-debug.css"
             ]
         },
         {
             "name": "jquery",
-            "version": "2.0.3",
+            "version": "2.2.0",
             "src": "http://cdnjs.cloudflare.com/ajax/libs/jquery/{version}/jquery.js"
         }
     ],
