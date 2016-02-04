@@ -32,7 +32,7 @@
             "name": "ext",
             "type": "desktop",
             "version": "6.0.0",
-            "theme": "classic",
+            "theme": "crisp",
             "src": [
                 "https://cdnjs.cloudflare.com/ajax/libs/extjs/{version}/ext-all-debug.js",
                 "https://cdnjs.cloudflare.com/ajax/libs/extjs/{version}/classic/theme-{theme}/theme-{theme}-debug.js"
