@@ -38,7 +38,7 @@
                 "https://cdnjs.cloudflare.com/ajax/libs/extjs/{version}/classic/theme-{theme}/theme-{theme}-debug.js"
             ],
             "res": [
-                "https://cdnjs.cloudflare.com/ajax/libs/extjs/classic/{theme}/theme-{theme}/resources/theme-{theme}-all-debug.css"
+                "https://cdnjs.cloudflare.com/ajax/libs/extjs/{version}/classic/{theme}/theme-{theme}/resources/theme-{theme}-all-debug.css"
             ]
         },
         {
