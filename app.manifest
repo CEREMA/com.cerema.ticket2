@@ -30,15 +30,14 @@
     "frameworks": [
         {
             "name": "ext",
+            "version": "4.2.1",
             "type": "desktop",
-            "version": "6.0.0",
-            "theme": "crisp",
+            "theme": "classic",
             "src": [
-                "https://cdnjs.cloudflare.com/ajax/libs/extjs/{version}/ext-all-debug.js",
-                "https://cdnjs.cloudflare.com/ajax/libs/extjs/{version}/classic/theme-{theme}/theme-{theme}-debug.js"
+                "http://cdn.sencha.com/ext/gpl/{version}/ext-all-debug.js"
             ],
             "res": [
-                "https://cdnjs.cloudflare.com/ajax/libs/extjs/{version}/classic/theme-{theme}/resources/theme-{theme}-all-debug.css"
+                "http://cdn.sencha.com/ext/gpl/{version}/resources/ext-theme-{theme}/ext-theme-{theme}-all.css"
             ]
         },
         {
