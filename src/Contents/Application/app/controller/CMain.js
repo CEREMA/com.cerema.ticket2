@@ -1,4 +1,3 @@
-
 App.controller.define('CMain', {
 
 	views: [
