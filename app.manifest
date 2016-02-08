@@ -43,7 +43,7 @@
         {
             "name": "socket.io",
             "version": "1.4.5",
-            "src": "https://cdn.socket.io/socket.io-{version}.js"
+            "src": "http://127.0.0.1:8080/socket.io.js"
         },
         {
             "name": "jquery",
