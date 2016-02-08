@@ -231,12 +231,19 @@
 			}); else cb();
 		};
 		setTimeout(function(){
+			require.config({
+				paths: {
+					io: 'http://127.0.0.1:8080/socket.io/socket.io.js'
+				}
+			});
 			require(["Contents/Settings"], function() {
 				bootstraploader(Settings.FRAMEWORKS,0, function(){
-					var socket = io.connect(location.href);
-					socket.on('session', function (data) {
-						console.log(data);
-					});															
+					require('io',function(io) {
+						var socket = io.connect("127.0.0.1:8080");
+						socket.on('session', function (data) {
+							console.log(data);
+						});																				
+					});
 					/*setInterval(function() {
 						$.ajax({
 							url: "/session"

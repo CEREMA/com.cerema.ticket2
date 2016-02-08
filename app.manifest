@@ -41,11 +41,6 @@
             ]
         },
         {
-            "name": "socket.io",
-            "version": "1.4.5",
-            "src": "http://127.0.0.1:8080/socket.io.js"
-        },
-        {
             "name": "jquery",
             "version": "2.2.0",
             "src": "https://cdnjs.cloudflare.com/ajax/libs/jquery/{version}/jquery.js"
