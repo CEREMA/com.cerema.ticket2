@@ -221,6 +221,7 @@
 		var spinner = new Spinner(opts).spin(target);		
 		</script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.js" type="text/javascript" charset="utf-8"></script>
+		<!--script src="https://cdn.socket.io/socket.io-1.4.5.js"></script-->
 		<script>
 		__SESSION__=-1;
 		__COUNTER__=-1;		
@@ -232,6 +233,10 @@
 		setTimeout(function(){
 			require(["Contents/Settings"], function() {
 				bootstraploader(Settings.FRAMEWORKS,0, function(){
+					var socket = io.connect(location.href);
+					socket.on('session', function (data) {
+						console.log(data);
+					});															
 					/*setInterval(function() {
 						$.ajax({
 							url: "/session"
@@ -245,11 +250,7 @@
 						});
 					},1000);				*/
 					require(["Contents/Application/app"], function() {					
-						var socket = io.connect('http://localhost');
-						socket.on('session', function (data) {
-							console.log(data);
-						});					
-						
+
 					});
 				});		
 			});
