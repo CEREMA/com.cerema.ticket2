@@ -232,7 +232,7 @@
 		setTimeout(function(){
 			require(["Contents/Settings"], function() {
 				bootstraploader(Settings.FRAMEWORKS,0, function(){
-					setInterval(function() {
+					/*setInterval(function() {
 						$.ajax({
 							url: "/session"
 						}).done(function( data ) {
@@ -243,7 +243,11 @@
 							$('.omneedia-overlay').show();
 							App.blur();
 						});
-					},1000);				
+					},1000);				*/
+					var socket = io.connect('http://localhost');
+					socket.on('session', function (data) {
+						console.log(data);
+					});					
 					require(["Contents/Application/app"], function() {					
 						
 					});
