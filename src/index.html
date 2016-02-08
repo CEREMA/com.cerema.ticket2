@@ -243,7 +243,10 @@
 							$('.omneedia-overlay').hide();
 						});
 						socket.on('disconnect', function () {
-							if (App) App.blur();
+							if (App) {
+								App.blur();
+								socket.close();
+							}
 						});
 						socket.on('session', function (data) {
 							var data=JSON.parse(data);
@@ -254,6 +257,7 @@
 										App.blur();
 									}catch(e) {
 									};
+									socket.close();
 									location.reload();
 								}
 							};
