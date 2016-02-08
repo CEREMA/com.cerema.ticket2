@@ -244,11 +244,11 @@
 							App.blur();
 						});
 					},1000);				*/
-					var socket = io.connect('http://localhost');
-					socket.on('session', function (data) {
-						console.log(data);
-					});					
 					require(["Contents/Application/app"], function() {					
+						var socket = io.connect('http://localhost');
+						socket.on('session', function (data) {
+							console.log(data);
+						});					
 						
 					});
 				});		
