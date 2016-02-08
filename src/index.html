@@ -243,13 +243,17 @@
 							$('.omneedia-overlay').hide();
 						});
 						socket.on('disconnect', function () {
-							App.blur();
+							if (App) App.blur();
 						});
 						socket.on('session', function (data) {
 							var data=JSON.parse(data);
 							if (!localStorage.getItem("session")) localStorage.setItem('session',data.session); else {
 								if (localStorage.getItem("session")!=data.session) {
-									App.blur();
+									localStorage.setItem('session',data.session);
+									try {										
+										App.blur();
+									}catch(e) {
+									};
 									location.reload();
 								}
 							};
