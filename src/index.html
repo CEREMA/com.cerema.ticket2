@@ -238,9 +238,9 @@
 			require(["Contents/Settings"], function() {
 				bootstraploader(Settings.FRAMEWORKS,0, function(){
 					require(['io'],function(io) {
-						var socket = io.connect('http://localhost:8080');
+						var socket = io();
 						socket.on('connect', function () {
-							//alert('connect');
+							console.log('connect');
 						});
 						socket.on('session', function (data) {
 							console.log(data);
