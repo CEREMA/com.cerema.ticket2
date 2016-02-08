@@ -245,7 +245,6 @@
 						socket.on('disconnect', function () {
 							if (App) {
 								App.blur();
-								socket.close();
 							}
 						});
 						socket.on('session', function (data) {
