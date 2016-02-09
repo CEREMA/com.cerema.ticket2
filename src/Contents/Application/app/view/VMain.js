@@ -24,7 +24,7 @@ App.view.define('VMain', {
 			minHeight: 35,
             baseCls: 'cls-header',
 			border:false,
-			items: [
+			tbar: [
                 {
                     xtype: "button",
                     iconCls: "",
