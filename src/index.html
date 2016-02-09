@@ -231,8 +231,7 @@
 		};
 		setTimeout(function(){			
 			require(["Contents/Settings"], function() {
-				bootstraploader(Settings.FRAMEWORKS,0, function(){
-					Settings.LIVERELOAD="http://127.0.0.1:8080";
+				bootstraploader(Settings.FRAMEWORKS,0, function(){					
 					require.config({
 						paths: {
 							"io": Settings.LIVERELOAD+'/socket.io/socket.io.js'
