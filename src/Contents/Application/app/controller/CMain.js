@@ -33,8 +33,29 @@ App.controller.define('CMain', {
 	{
 		Ext.Msg.alert('Omneedia','hello world!');
 	},
+	MAJ_Grid: function()
+	{
+		var grid=App.get('mainform grid#maingrid').getStore();
+		grid.getProxy().extraParams.uid=Auth.User.uid;
+		grid.getProxy().extraParams.profil=Auth.User.profiles;
+		grid.load();
+        /*if (this.ItemID) {
+			//App.info.loading("chargement en cours...");			
+            App.DB.get('infocentre://ticket?id='+this.ItemID,function(e,r) {
+                var data={};
+                if (r.result.data.length>0) data=r.result.data[0];
+                App.view.create('VNewTicket',{
+                    data: data,
+                    modal: true
+                }).show();
+				//App.info.hide();
+            });
+			delete this.ItemID;
+        };*/        
+	},	
 	onLoad: function()
 	{
+		var me=this;
 		Auth.login(function(auth) {
 			/*var docked = App.get('mainform grid#maingrid').getDockedItems();
 			console.log(Auth.User.profiles);
