@@ -85,7 +85,7 @@ Demandes = {
 				for (var i=0;i<r.length;i++) {
 					KAGE.push(r[i].kage);
 				};
-				db.model('infocentre','select * from ticket where agent in ('+KAGE.join(',')+') and state=1 order by date_depot desc',cb);	
+				db.model('infocentre','select * from ticket where agent in ('+KAGE.join(',')+') and state='+state+' order by date_depot desc',cb);	
 			});
 			return;
 		};
