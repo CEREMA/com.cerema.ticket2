@@ -4,7 +4,9 @@ App.view.define('VNewTicket', {
     initComponent: function() {
         this.width = 1024;
         this.height = 660;
-
+		
+		this.title = "Ticket";
+		
         this.layout = {
             type: 'vbox'
         };
