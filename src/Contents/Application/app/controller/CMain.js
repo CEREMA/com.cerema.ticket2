@@ -35,6 +35,7 @@ App.controller.define('CMain', {
 	},
     grid_onclick: function(item,record) 
     {
+        console.log(record);
 		App.view.create('VNewTicket',{
 			modal: true,
             record: record
