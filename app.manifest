@@ -67,7 +67,7 @@
     },
     "splashscreen": {
         "background": "blue",
-        "color": "navy",
+        "color": "lightcyan",
         "file": "app.png"
     },
     "server": {
