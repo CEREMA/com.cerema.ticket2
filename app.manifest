@@ -1,6 +1,6 @@
 {
     "namespace": "com.cerema.ticket",
-    "git": "",
+    "git": "https://github.com/CEREMA/com.cerema.ticket2",
     "title": "Ticketz",
     "description": "Gestion des tickets",
     "platform": "desktop",
