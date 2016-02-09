@@ -28,6 +28,7 @@ App.view.define('VMain', {
                 {
                     xtype: "button",
                     iconCls: "add_ticket",
+                    scale: "large",
                     margin: 3,
                     text: "Nouveau ticket"
                 }
