@@ -35,10 +35,14 @@ App.controller.define('CMain', {
 	},
 	onLoad: function()
 	{
-		// form loaded	
-		Auth.Login(function() {
-			
-		});
+		Auth.login(function(auth) {
+			/*var docked = App.get('mainform grid#maingrid').getDockedItems();
+			console.log(Auth.User.profiles);
+			if ((Auth.User.profiles.indexOf('SII')==-1) && (Auth.User.profiles.indexOf('GEST')==-1)) {
+				docked[2].hide();
+			};*/
+			me.MAJ_Grid();
+		});	
 	}
 	
 	
