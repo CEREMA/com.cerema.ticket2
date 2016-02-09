@@ -56,7 +56,10 @@
     "api": [
         "Demandes"
     ],
-    "db": [],
+    "db": [
+        "bpclight",
+        "infocentre"
+    ],
     "packages": [],
     "icon": {
         "background": "#FFFFFF",
