@@ -21,7 +21,7 @@ App.view.define('VMain', {
         {
             region: "west",
             split: true,
-            layout:"vbox",
+            layout:"fit",
             width: 250,
             items: [
                 {
