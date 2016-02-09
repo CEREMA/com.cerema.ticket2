@@ -36,6 +36,9 @@ App.controller.define('CMain', {
 	onLoad: function()
 	{
 		// form loaded	
+		Auth.Login(function() {
+			
+		});
 	}
 	
 	

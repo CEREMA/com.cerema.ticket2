@@ -1,8 +1,8 @@
 {
     "namespace": "com.cerema.ticket",
     "git": "",
-    "title": "com.cerema.ticket",
-    "description": "Package description goes here",
+    "title": "Ticketz",
+    "description": "Gestion des tickets",
     "platform": "desktop",
     "targets": [
         "webapp"
