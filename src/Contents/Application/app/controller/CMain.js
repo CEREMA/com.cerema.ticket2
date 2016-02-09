@@ -36,9 +36,23 @@ App.controller.define('CMain', {
 	{
 		Ext.Msg.alert('Omneedia','hello world!');
 	},
-    dataview_onclick: function(item, index, e) 
+    dataview_onclick: function(item, record, e) 
     {
-        console.log(index);
+        var extraParams=App.get('mainform grid#maingrid').getStore().getProxy().extraParams;
+        switch(record.data.id) {
+            case 1:
+                var store=App.store.create('App.Demandes.mytickets',{groupField: "agent_departement"});
+                store.getProxy().extraParams=extraParams;
+			    store.getProxy().extraParams.id=Auth.User.uid;
+                App.get('mainform grid#maingrid').bindStore(store);                
+                break;
+            case 6:
+                var store=App.store.create('App.Demandes.toutes_archives',{groupField: "agent_departement"});
+                store.getProxy().extraParams=extraParams;
+                App.get('mainform grid#maingrid').bindStore(store);                
+                break;
+            default:
+        };
     },
 	MAJ_Grid: function()
 	{
