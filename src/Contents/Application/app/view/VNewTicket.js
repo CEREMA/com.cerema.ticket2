@@ -8,7 +8,7 @@ App.view.define('VNewTicket', {
 		this.title = "Ticket";
 		
         this.layout = {
-            type: 'vbox'
+            type: 'border'
         };
 
         this.bbar = [
