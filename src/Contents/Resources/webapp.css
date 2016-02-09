@@ -51,8 +51,8 @@
     font-size: 11px;
     line-height: 28px;
     cursor: pointer;
-    background-position: 0 -76px;
-    background: url(webapp/ticket.png);
+    background: url(webapp/ticket.png) no-repeat;
+    background-position: 0px 76px;    
     border: 1px solid #fff;
 }
 
