@@ -17,7 +17,10 @@ App.controller.define('CMain', {
 			},
 			"button#clickme": {
 				click: "clickme_onclick"
-			}
+			},
+            "mainform dataview": {
+                itemclick: "dataview_onclick"   
+            }
 		});
 		
 		App.init('VMain',this.onLoad);
@@ -33,6 +36,10 @@ App.controller.define('CMain', {
 	{
 		Ext.Msg.alert('Omneedia','hello world!');
 	},
+    dataview_onclick: function(item, index, e) 
+    {
+        console.log(index);
+    },
 	MAJ_Grid: function()
 	{
 		var grid=App.get('mainform grid#maingrid').getStore();
