@@ -22,6 +22,7 @@ App.view.define('VMain', {
 			region: 'north',
 			height: 25,
 			minHeight: 25,
+            baseCls: 'cls-header',
 			border:false,
 			items: [
                 {
