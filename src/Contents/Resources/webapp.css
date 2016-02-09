@@ -47,9 +47,9 @@
 
 .feed-list-item {
     margin-top: 3px;
-    padding-left: 28px;
+    padding-left: 34px;
     font-size: 11px;
-    line-height: 24px;
+    line-height: 28px;
     cursor: pointer;
     background: url(webapp/ticket.png) no-repeat;
     border: 1px solid #fff;
