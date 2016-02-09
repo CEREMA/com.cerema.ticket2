@@ -98,6 +98,7 @@ App.view.define('VMain', {
 					xtype: "grid",
 					flex: 1,
 					itemId: "maingrid",
+                    border: false,
 					width: "100%",
 					columns: [
 						{
@@ -242,27 +243,7 @@ App.view.define('VMain', {
 					],					
 					store: App.store.create("App.Demandes.toutes",{
 						groupField: "agent_departement"
-					}),
-                    bbar: [
-                    {
-                        xtype: "checkbox",
-                        itemId: "cbArchive",
-                        boxLabel: "Archive",
-                        padding: 4
-                    },
-                    {
-                        xtype: "checkbox",
-                        itemId: "cbNew",
-                        boxLabel: "Nouveaux tickets",
-                        padding: 4
-                    },
-                    {
-                        xtype: "checkbox",
-                        itemId: "cbMyTickets",
-                        boxLabel: "Mes tickets",
-                        padding: 4
-                    }
-                    ]
+					})
 				}
 			]
 		}
