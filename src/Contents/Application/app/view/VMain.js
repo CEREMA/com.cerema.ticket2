@@ -18,6 +18,22 @@ App.view.define('VMain', {
 			menu: [
 			]		
 		},
+		{
+			region: 'north',
+			height: 25,
+			minHeight: 25,
+			border:false,
+			baseCls: 'cls-header',
+			xtype: "Menu",
+			itemId: "MenuPanel",
+			menu: [
+                {
+                    xtype: "button",
+                    iconCls: "",
+                    text: "Nouveau ticket"
+                }
+			]		
+		},
         {
             region: "west",
             split: true,
