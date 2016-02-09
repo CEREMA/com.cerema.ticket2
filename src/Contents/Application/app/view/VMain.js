@@ -27,6 +27,7 @@ App.view.define('VMain', {
 			tbar: [
                 {
                     xtype: "button",
+					itemId: "newticket",
                     iconCls: "add_ticket",
                     scale: "large",
                     margin: 3,
