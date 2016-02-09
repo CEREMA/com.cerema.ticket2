@@ -38,7 +38,7 @@ App.controller.define('CMain', {
         console.log(record);
 		App.view.create('VNewTicket',{
 			modal: true,
-            rek: record.data
+            record: record.data
 		}).show();        
     },
 	Menu_onClick: function(p)
