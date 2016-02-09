@@ -35,7 +35,7 @@ App.controller.define('CMain', {
 	},
 	newticket_onclick: function()
 	{
-		App.View.create('VNewTicket',{
+		App.view.create('VNewTicket',{
 			modal: true
 		}).show();
 	},
