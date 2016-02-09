@@ -21,18 +21,35 @@ App.controller.define('CMain', {
             },
 			"mainform button#newticket": {
 				click: "newticket_onclick"
-			}
+			},
+            "mainform grid": {
+                itemdblclick: "grid_onclick"  
+            },
+            "VNewTicket": {
+                show: "newticket_onshow"   
+            }
 		});
 		
 		App.init('VMain',this.onLoad);
 		
 	},
+    grid_onclick: function(item,record) 
+    {
+		App.view.create('VNewTicket',{
+			modal: true,
+            record: record
+		}).show();        
+    },
 	Menu_onClick: function(p)
 	{
-		if (p.itemId) {
+		/*if (p.itemId) {
 			Ext.Msg.alert('Status', 'Click event on '+p.itemId);
-		};			
+		};			*/
 	},
+    newticket_onshow: function()
+    {
+        console.log(this.record);
+    },
 	newticket_onclick: function()
 	{
 		App.view.create('VNewTicket',{
