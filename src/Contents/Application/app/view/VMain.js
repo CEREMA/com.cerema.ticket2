@@ -20,15 +20,15 @@ App.view.define('VMain', {
 		},
 		{
 			region: 'north',
-			height: 25,
-			minHeight: 25,
+			height: 35,
+			minHeight: 35,
             baseCls: 'cls-header',
 			border:false,
 			items: [
                 {
                     xtype: "button",
                     iconCls: "",
-                    margin: 5,
+                    margin: 3,
                     text: "Nouveau ticket"
                 }
 			]		
