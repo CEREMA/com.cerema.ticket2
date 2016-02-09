@@ -47,7 +47,27 @@ App.view.define('VMain', {
                     ],data:[
                         {
                             id: 1,
-                            title: "bonjour"
+                            title: "Mes tickets"
+                        },
+                        {
+                            id: 2,
+                            title: "Tickets posés"
+                        },
+                        {
+                            id: 3,
+                            title: "Tickets attribués"
+                        },
+                        {
+                            id: 4,
+                            title: "Tickets en cours"
+                        },
+                        {
+                            id: 5,
+                            title: "Tickets traités"
+                        },
+                        {
+                            id: 6,
+                            title: "Archive"
                         }
                     ]},{autoLoad: true}),
                     selModel: {
@@ -223,15 +243,6 @@ App.view.define('VMain', {
 					store: App.store.create("App.Demandes.toutes",{
 						groupField: "agent_departement"
 					}),
-					tbar: [
-					{
-						xtype: "button",
-						itemId: "btnNew",
-						scale: 'large',
-						iconCls: 'btnNew',
-						text: "Nouveau ticket"
-					}
-					],
                     bbar: [
                     {
                         xtype: "checkbox",
