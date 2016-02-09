@@ -68,5 +68,10 @@
 
 .add_ticket
 {
-	background: url(webapp/add_ticket.png) no-repeat;
+	background: url(webapp/add_ticket.png);
+	background-repeat:no-repeat;
+	background-position:center center;	
+	background-size: 16px 16px;
+	width: 16px;
+	height: 16px;		
 }
