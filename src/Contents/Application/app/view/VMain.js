@@ -19,7 +19,7 @@ App.view.define('VMain', {
 			]		
 		},
         {
-            region: "east",
+            region: "west",
             split: true,
             layout:"vbox",
             width: 250,
