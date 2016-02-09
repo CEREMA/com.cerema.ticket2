@@ -25,7 +25,31 @@ App.view.define('VMain', {
             width: 250,
             items: [
                 {
-                    html: "yes"
+                    xtype: "dataview",
+                    store: App.store.create({fields:[
+                        "id","title"
+                    ],data:[
+                        {
+                            id: 1,
+                            title: "bonjour"
+                        }
+                    ]},{autoLoad: true}),
+                    selModel: {
+                        mode: 'SINGLE',
+                        listeners: {
+                            scope: this/*,
+                            selectionchange: this.onSelectionChange*/
+                        }
+                    },/*
+                    listeners: {
+                        scope: this,
+                        contextmenu: this.onContextMenu
+                    },*/
+                    trackOver: true,
+                    cls: 'feed-list',
+                    itemSelector: '.feed-list-item',
+                    overItemCls: 'feed-list-item-hover',
+                    tpl: '<tpl for="."><div class="feed-list-item">{title}</div></tpl>'                    
                 }
             ]
         },
