@@ -22,6 +22,25 @@ App.view.define('VNewTicket', {
         };
 
         this.items = [
+            {
+                region: "east",
+                layout: "vbox",
+                width: 250,
+                items: [
+                    {
+                        html: "yes"   
+                    }
+                ]                
+            },
+            {
+                region: "center",
+                layout: "vbox",
+                items: [
+                    {
+                        html: "yes"   
+                    }                    
+                ]
+            }
 		];
 
         this.callParent();
