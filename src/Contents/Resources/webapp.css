@@ -65,3 +65,8 @@
 .feed-list-item-hover {
     background-color: #eee;
 }
+
+.add_ticket
+{
+	background: url(webapp/add_ticket.png) no-repeat;
+}
