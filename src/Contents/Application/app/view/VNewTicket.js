@@ -24,8 +24,14 @@ App.view.define('VNewTicket', {
         this.items = [
             {
                 region: "east",
-                layout: "vbox",
+                layout: "fit",
+                title: "Timeline",
                 width: 250,
+                tbar: [
+                    {
+                        text: "Ajouter un commentaire"   
+                    }
+                ],
                 items: [
                     {
                         html: "yes"   
