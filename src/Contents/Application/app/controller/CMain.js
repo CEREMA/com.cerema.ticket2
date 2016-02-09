@@ -53,6 +53,27 @@ App.controller.define('CMain', {
                 App.get('mainform grid#maingrid').bindStore(store);                
                 App.get('mainform grid#maingrid').getStore().load();
                 break;
+            case 3:
+                var store=App.store.create('App.Demandes.news',{groupField: "agent_departement"});
+                store.getProxy().extraParams=extraParams;
+                store.getProxy().extraParams.state=2;
+                App.get('mainform grid#maingrid').bindStore(store);                
+                App.get('mainform grid#maingrid').getStore().load();
+                break;
+            case 4:
+                var store=App.store.create('App.Demandes.news',{groupField: "agent_departement"});
+                store.getProxy().extraParams=extraParams;
+                store.getProxy().extraParams.state=3;
+                App.get('mainform grid#maingrid').bindStore(store);                
+                App.get('mainform grid#maingrid').getStore().load();
+                break;
+            case 5:
+                var store=App.store.create('App.Demandes.news',{groupField: "agent_departement"});
+                store.getProxy().extraParams=extraParams;
+                store.getProxy().extraParams.state=4;
+                App.get('mainform grid#maingrid').bindStore(store);                
+                App.get('mainform grid#maingrid').getStore().load();
+                break;
             case 6:
                 var store=App.store.create('App.Demandes.toutes_archives',{groupField: "agent_departement"});
                 store.getProxy().extraParams=extraParams;
