@@ -75,7 +75,7 @@ Demandes = {
 	},
 	news: function(o,cb) {
 		var db=Demandes.using('db');
-        
+        var state=1;
 		if (o.profil.length==0) {
 			// profil de "base"
 			// ne voit que son service
@@ -90,12 +90,12 @@ Demandes = {
 		};
 		if (o.profil.indexOf("SII")>-1) {
 			// profil SII, voit tout le monde
-			db.model('infocentre','select * from ticket where state=1 order by date_depot desc',cb);
+			db.model('infocentre','select * from ticket where state='+state+' order by date_depot desc',cb);
 			return;
 		};
 		if (o.profil.indexOf("GEST")>-1) {
 			// profil SII, voit tout le monde
-			db.model('infocentre','select * from ticket where state=1 order by date_depot desc',cb);
+			db.model('infocentre','select * from ticket where state='+state+' order by date_depot desc',cb);
 			return;
 		};
 		if (o.profil.indexOf("CLI")>-1) {
@@ -105,7 +105,7 @@ Demandes = {
 				for (var i=0;i<r.length;i++) {
 					KAGE.push(r[i].kage);
 				};
-				db.model('infocentre','select * from ticket where agent in ('+KAGE.join(',')+') and state=1 order by date_depot desc',cb);			
+				db.model('infocentre','select * from ticket where agent in ('+KAGE.join(',')+') and state='+state+' order by date_depot desc',cb);			
 			});
 			return;
 		}
