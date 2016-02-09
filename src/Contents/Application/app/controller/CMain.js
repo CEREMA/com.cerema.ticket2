@@ -50,6 +50,7 @@ App.controller.define('CMain', {
             case 2:
                 var store=App.store.create('App.Demandes.news',{groupField: "agent_departement"});
                 store.getProxy().extraParams=extraParams;
+                store.getProxy().extraParams.state=1;
                 App.get('mainform grid#maingrid').bindStore(store);                
                 App.get('mainform grid#maingrid').getStore().load();
                 break;
