@@ -27,7 +27,7 @@ App.view.define('VMain', {
 			tbar: [
                 {
                     xtype: "button",
-                    iconCls: "",
+                    iconCls: "add_ticket",
                     margin: 3,
                     text: "Nouveau ticket"
                 }
