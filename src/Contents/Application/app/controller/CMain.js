@@ -53,9 +53,9 @@ App.controller.define('CMain', {
 			delete this.ItemID;
         };*/        
 	},	
-	onLoad: function()
+	onLoad: function(me)
 	{
-		var me=this;
+		//var me=this;
 		Auth.login(function(auth) {
 			/*var docked = App.get('mainform grid#maingrid').getDockedItems();
 			console.log(Auth.User.profiles);
