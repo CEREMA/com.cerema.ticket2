@@ -39,14 +39,17 @@ App.controller.define('CMain', {
     dataview_onclick: function(item, record, e) 
     {
         var extraParams=App.get('mainform grid#maingrid').getStore().getProxy().extraParams;
+        alert(record.data.id);
         switch(record.data.id) {
             case 1:
+                alert('x');
                 var store=App.store.create('App.Demandes.mytickets',{groupField: "agent_departement"});
                 store.getProxy().extraParams=extraParams;
 			    store.getProxy().extraParams.id=Auth.User.uid;
                 App.get('mainform grid#maingrid').bindStore(store);                
                 break;
             case 6:
+                alert('y');
                 var store=App.store.create('App.Demandes.toutes_archives',{groupField: "agent_departement"});
                 store.getProxy().extraParams=extraParams;
                 App.get('mainform grid#maingrid').bindStore(store);                
