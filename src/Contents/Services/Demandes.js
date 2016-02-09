@@ -76,6 +76,7 @@ Demandes = {
 	news: function(o,cb) {
 		var db=Demandes.using('db');
         var state=1;
+        if (o.state) state=o.state;
 		if (o.profil.length==0) {
 			// profil de "base"
 			// ne voit que son service
