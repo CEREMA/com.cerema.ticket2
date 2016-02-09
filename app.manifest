@@ -54,7 +54,8 @@
     "modules": [],
     "plugins": [],
     "api": [
-        "MyService"
+        "MyService",
+        "Demandes"
     ],
     "db": [],
     "packages": [],
