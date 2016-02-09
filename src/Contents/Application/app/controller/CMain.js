@@ -2,7 +2,8 @@
 App.controller.define('CMain', {
 
 	views: [
-		"VMain"
+		"VMain",
+		"VNewTicket"
 	],
 	
 	models: [
@@ -15,12 +16,12 @@ App.controller.define('CMain', {
 			"menu>menuitem": {
 				click: "Menu_onClick"
 			},
-			"button#clickme": {
-				click: "clickme_onclick"
-			},
             "mainform dataview": {
                 itemclick: "dataview_onclick"   
-            }
+            },
+			"mainform button#newticket": {
+				click: "newticket_onclick"
+			}
 		});
 		
 		App.init('VMain',this.onLoad);
@@ -32,9 +33,11 @@ App.controller.define('CMain', {
 			Ext.Msg.alert('Status', 'Click event on '+p.itemId);
 		};			
 	},
-	clickme_onclick: function()
+	newticket_onclick: function()
 	{
-		Ext.Msg.alert('Omneedia','hello world!');
+		App.View.create('VNewTicket',{
+			modal: true
+		}).show();
 	},
     dataview_onclick: function(item, record, e) 
     {
