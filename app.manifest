@@ -46,7 +46,9 @@
             "src": "https://cdnjs.cloudflare.com/ajax/libs/jquery/{version}/jquery.js"
         }
     ],
-    "auth": [],
+    "auth": [
+        "CERBERE"
+    ],
     "paths": {},
     "controllers": [
         "CMain"
