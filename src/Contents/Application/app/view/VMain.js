@@ -23,10 +23,7 @@ App.view.define('VMain', {
 			height: 25,
 			minHeight: 25,
 			border:false,
-			baseCls: 'cls-header',
-			xtype: "Menu",
-			itemId: "MenuPanel",
-			menu: [
+			items: [
                 {
                     xtype: "button",
                     iconCls: "",
