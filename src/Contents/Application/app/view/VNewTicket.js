@@ -16,6 +16,8 @@ App.view.define('VNewTicket', {
 
         this.tbar = [
         ];
+        
+        this.record = {};
 		
         this.defaults = {
             split: true
