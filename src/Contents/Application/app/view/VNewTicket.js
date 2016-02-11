@@ -50,6 +50,7 @@ App.view.define('VNewTicket', {
                 items: [
                     {
                         xtype: "combo",
+                        itemId: "agent",
                         width: "100%",
                         typeAhead: false,
                         queryMode: 'local',
