@@ -197,7 +197,7 @@ App.view.define('VMain', {
 						},
 						{
 							text: "Etat",
-							width: 150,
+							width: 100,
 							dataIndex: "state",
 							renderer: function(x) {
 								var result="";
