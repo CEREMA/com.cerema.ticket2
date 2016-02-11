@@ -73,7 +73,8 @@ App.view.define('VNewTicket', {
                         displayField: "nomprenom",
                         valueField: "Kage",
                         store: App.store.create({fields:[],data:[]}),
-                        selectOnFocus:true
+                        selectOnFocus:true,
+                        bind: "agent"
                     },
                     {
                         xtype: "textfield",
@@ -81,7 +82,8 @@ App.view.define('VNewTicket', {
                         width: "100%",
                         margin: 5,
                         fieldLabel: "Titre",
-                        labelAlign: "top"
+                        labelAlign: "top",
+                        bind: "titre"
                     },
                     {
                         xtype: "htmleditor",
@@ -90,7 +92,8 @@ App.view.define('VNewTicket', {
                         margin: 5,
                         width: "100%",
                         fieldLabel: "Demande initiale",
-                        labelAlign: "top"
+                        labelAlign: "top",
+                        bind: "demande"
                     },
                     {
                         xtype: "checkbox",
