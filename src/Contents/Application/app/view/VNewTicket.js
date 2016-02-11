@@ -53,7 +53,7 @@ App.view.define('VNewTicket', {
                         typeAhead: true,
                         queryMode: 'remote',
                         triggerAction: 'query',                        
-                        tpl: '<tpl for="."><div class="x-combo-list-item" ><b>{nomprenom}</b><br>Département: {libunic} Service: {libsubc}</div></tpl>', 
+                        tpl: '<tpl for="."><div class="x-combo-list-item"><b>{nomprenom}</b><br>Département: {libunic} - Service: {libsubc}</div></tpl>', 
                         triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
                         margin: 5,
                         hideTrigger: false,
