@@ -64,7 +64,7 @@ App.view.define('VNewTicket', {
                         labelAlign: "top",
                         displayField: "nomprenom",
                         valueField: "Kage",
-                        store: App.store.create(fields:[],data:[]),
+                        store: App.store.create({fields:[],data:[]}),
                         selectOnFocus:true
                     },
                     {
