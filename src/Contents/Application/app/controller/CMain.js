@@ -79,7 +79,7 @@ App.controller.define('CMain', {
     {
         p.center();
         if (p.record) {
-            App.DB.get('infocentre://ticket?id='+p.record.id,p.up('window'),function(r){
+            App.DB.get('infocentre://ticket?id='+p.record.id,p,function(r){
                 
             });  
         };
