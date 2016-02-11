@@ -27,6 +27,9 @@ App.controller.define('CMain', {
             },
             "VNewTicket": {
                 show: "newticket_onshow"   
+            },
+            "VNewTicket button#validate": {
+                
             }
 		});
 		
@@ -153,16 +156,16 @@ App.controller.define('CMain', {
 	{
 		var me=this;
 		Auth.login(function(auth) {
-			/*var docked = App.get('mainform grid#maingrid').getDockedItems();
-			console.log(Auth.User.profiles);
-			if ((Auth.User.profiles.indexOf('SII')==-1) && (Auth.User.profiles.indexOf('GEST')==-1)) {
-				docked[2].hide();
-			};*/
+                    if ((Auth.User.profiles.indexOf('SII')==-1) && (Auth.User.profiles.indexOf('GEST')==-1) && (Auth.User.profiles.indexOf('CLI')==-1) ) {
+                App.blur();
+                alert("Désolé ! Vous n'avez pas les droits d'utiliser cette application.");
+          } else {
               App.get('mainform dataview').select(0);
-		      var grid=App.get('mainform grid#maingrid').getStore();
-		      grid.getProxy().extraParams.uid=Auth.User.uid;
-		      grid.getProxy().extraParams.profil=Auth.User.profiles;
-		      grid.load();
+              var grid=App.get('mainform grid#maingrid').getStore();
+              grid.getProxy().extraParams.uid=Auth.User.uid;
+              grid.getProxy().extraParams.profil=Auth.User.profiles;
+              grid.load();
+          }
 		});	
 	}
 	
