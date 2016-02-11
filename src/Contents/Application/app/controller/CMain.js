@@ -52,11 +52,11 @@ App.controller.define('CMain', {
         p.center();
         console.log(this.record);
         if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
-            var store=App.store("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.libunic,subdis.libsubc,Kage}?actif=1");  
+            var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.libunic,subdis.libsubc,Kage}?actif=1");  
             App.get(p,'combo#agent').bindStore(store);            
         };
         if (Auth.User.profiles.indexOf('CLI')>-1) {
-            var store=App.store("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.libunic,subdis.libsubc,Kage}?actif=1&kuni="+Auth.User.kuni);  
+            var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.libunic,subdis.libsubc,Kage}?actif=1&kuni="+Auth.User.kuni);  
             App.get(p,'combo#agent').bindStore(store);            
         };
         App.get(p,'combo#agent').getStore().load();
