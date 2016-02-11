@@ -46,31 +46,7 @@ App.view.define('VMain', {
                     store: App.store.create({fields:[
                         "id","title"
                     ],data:[
-                        {
-                            id: 1,
-                            title: "Mes tickets"
-                        },
-                        {
-                            id: 2,
-                            title: "Tickets posés"
-                        },
-                        {
-                            id: 3,
-                            title: "Tickets attribués"
-                        },
-                        {
-                            id: 4,
-                            title: "Tickets en cours"
-                        },
-                        {
-                            id: 5,
-                            title: "Tickets traités"
-                        },
-                        {
-                            id: 6,
-                            title: "Archive"
-                        }
-                    ]},{autoLoad: true}),
+                    ]}),
                     selModel: {
                         mode: 'SINGLE',
                         listeners: {
