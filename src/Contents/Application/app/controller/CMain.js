@@ -62,7 +62,7 @@ App.controller.define('CMain', {
                 titre: App.get(p.up('window'),'textfield#titre').getValue(),
                 demande: App.get(p.up('window'),'htmleditor#demande').getValue()
             };
-            App.DB.post('infocentre://ticket',o,functio(){
+            App.DB.post('infocentre://ticket',o,function(){
                         
             });
         }
