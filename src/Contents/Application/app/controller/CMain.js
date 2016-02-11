@@ -56,8 +56,6 @@ App.controller.define('CMain', {
             // c'est un nouveau ticket
             
             var record=App.get(p.up('window'),'combo#agent').findRecordByValue(App.get(p.up('window'),'combo#agent').getValue());
-            console.log(record);
-            return;
             var d=new Date();
             var o={
                 cli: Auth.User.uid,
@@ -67,6 +65,10 @@ App.controller.define('CMain', {
                 titre: App.get(p.up('window'),'textfield#titre').getValue(),
                 demande: App.get(p.up('window'),'htmleditor#demande').getValue(),
                 date_depot: d,
+                agent_departement: record.get('libunic'),
+                agent_departement_id: record.get('kuni'),
+                agent_service: record.get('libsubc'),
+                agent_service_id: record.get('ksub'),
                 state: 1
             };
             App.DB.post('infocentre://ticket',o,function(){
@@ -81,11 +83,11 @@ App.controller.define('CMain', {
         console.log(this.record);
         console.log('-----------------');
         if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
-            var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.libunic,subdis.libsubc,Kage}?actif=1");  
+            var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.kuni,subdis.ksub,unites.libunic,subdis.libsubc,Kage}?actif=1");  
             App.get(p,'combo#agent').bindStore(store);            
         };
         if (Auth.User.profiles.indexOf('CLI')>-1) {
-            var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.libunic,subdis.libsubc,Kage}?actif=1&kuni="+Auth.User.kuni);  
+            var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.kuni,subdis.ksub,unites.libunic,subdis.libsubc,Kage}?actif=1&kuni="+Auth.User.kuni);  
             App.get(p,'combo#agent').bindStore(store);            
         };
         App.get(p,'combo#agent').getStore().load();
