@@ -119,7 +119,7 @@
     padding: 10px; 
     width: 100px;
     height: 1px;
-    line-height: 2px;
+    line-height: 1px;
   }
   .timeline-content:before {
     content: '';
