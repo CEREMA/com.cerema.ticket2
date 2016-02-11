@@ -28,7 +28,7 @@ App.view.define('VNewTicket', {
                 region: "east",
                 layout: "fit",
                 title: "Historique",
-                width: 450,
+                width: 550,
                 tbar: [
                     {
                         text: "Ajouter un commentaire"   
