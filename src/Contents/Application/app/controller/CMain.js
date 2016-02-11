@@ -50,6 +50,7 @@ App.controller.define('CMain', {
     newticket_onshow: function(p)
     {
         console.log(this.record);
+        console.log(Auth.User.profiles);
         p.center();
         var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
         html+='<li><p class="timeline-date2">%DATE%</p><div class="timeline-content2"><div class="timeline-content2p">Posé</div>&nbsp;&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;</div></li>';
