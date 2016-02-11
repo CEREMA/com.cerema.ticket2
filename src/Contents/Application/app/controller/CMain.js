@@ -198,6 +198,32 @@ App.controller.define('CMain', {
                 App.blur();
                 alert("Désolé ! Vous n'avez pas les droits d'utiliser cette application.");
           } else {
+              var data=[];
+              data.push({id: 1,title: "Mes tickets"});
+              if ((Auth.User.profiles.indexOf('SII')>-1) || (Auth.User.profiles.indexOf('GEST')>-1)) {
+                        data.push({
+                            id: 2,
+                            title: "Tickets posés"
+                        });
+                        {
+                            id: 3,
+                            title: "Tickets attribués"
+                        },
+                        {
+                            id: 4,
+                            title: "Tickets en cours"
+                        },
+                        {
+                            id: 5,
+                            title: "Tickets traités"
+                        },
+                        {
+                            id: 6,
+                            title: "Archive"
+              }                      
+              };
+              
+              App.get('mainform dataview').getStore().loadData();
               App.get('mainform dataview').select(0);
               var grid=App.get('mainform grid#maingrid').getStore();
               grid.getProxy().extraParams.uid=Auth.User.uid;
