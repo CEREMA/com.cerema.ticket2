@@ -114,8 +114,8 @@
     border-radius: 25px;
     border: 2px solid #73AD21;
     padding: 20px; 
-    width: 200px;
-    height: 50px; 
+    width: 100px;
+    height: 40px; 
   }
   .timeline-content:before {
     content: '';
