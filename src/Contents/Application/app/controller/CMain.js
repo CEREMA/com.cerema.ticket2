@@ -29,7 +29,7 @@ App.controller.define('CMain', {
                 show: "newticket_onshow"   
             },
             "VNewTicket button#validate": {
-                
+                click: "newticket_validate"
             }
 		});
 		
@@ -50,10 +50,16 @@ App.controller.define('CMain', {
 			Ext.Msg.alert('Status', 'Click event on '+p.itemId);
 		};			*/
 	},
+    newticket_validate: function(p)
+    {
+      
+    },
     newticket_onshow: function(p)
     {
         p.center();
+        console.log('-----------------');
         console.log(this.record);
+        console.log('-----------------');
         if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
             var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.libunic,subdis.libsubc,Kage}?actif=1");  
             App.get(p,'combo#agent').bindStore(store);            
