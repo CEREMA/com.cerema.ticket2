@@ -49,12 +49,14 @@ App.view.define('VNewTicket', {
                     {
                         xtype: "textfield",
                         width: "100%",
+                        margin: 5,
                         fieldLabel: "Titre",
                         labelAlign: "top"
                     },
                     {
                         xtype: "htmleditor",
                         height: 250,
+                        margin: 5,
                         width: "100%",
                         fieldLabel: "Demande",
                         labelAlign: "top"
