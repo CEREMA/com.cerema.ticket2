@@ -55,6 +55,7 @@ App.view.define('VNewTicket', {
                             src: Ext.BLANK_IMAGE_URL
                         },                        
                         margin: 5,
+                        hideTrigger: false,
                         fieldLabel: "Agent concerné",
                         labelAlign: "top"              
                     },
