@@ -158,6 +158,7 @@ App.controller.define('CMain', {
 		Auth.login(function(auth) {
                     if ((Auth.User.profiles.indexOf('SII')==-1) && (Auth.User.profiles.indexOf('GEST')==-1) && (Auth.User.profiles.indexOf('CLI')==-1) ) {
                 App.blur();
+                document.getElementsByTagName('body')[0].getElementsByTagName('div')[0].style.display="none";
                 alert("Désolé ! Vous n'avez pas les droits d'utiliser cette application.");
           } else {
               App.get('mainform dataview').select(0);
