@@ -101,17 +101,25 @@ App.controller.define('CMain', {
         };
         App.get(p,'combo#agent').getStore().load();
         var html0='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
-        var html1='<li><p class="timeline-date2">%DATE%</p><div class="timeline-content2"><div class="timeline-content2p">Posé</div>&nbsp;&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;</div></li>';
+        var html1='<li><p class="timeline-date2">%DATE%</p><div class="timeline-content2"><div class="timeline-content2p">%STATE%</div>&nbsp;&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;</div></li>';
         var tpl=[];
-        /*for (var i=0;i<r.result.data.length;i++) {
-            var results=html;
-            results=results.replace('%DATE%',r.result.data[i].date.toDate().toString('dd/MM/yyyy hh:mm'));
-            results=results.replace('%POSTER%',r.result.data[i].nomprenom);
-            results=results.replace('%COMMENT%',r.result.data[i].blog);
-            tpl.push(results);
-        };*/
-        results='<ul class="timeline">'+tpl.join('')+'</ul>';        
-        App.get(p,'panel#timeline').update(results);
+        App.DB.get("infocentre://ticket_timeline?ticket_id="+p.record.id,function(e,r){
+            for (var i=0;i<r.result.data.length;i++) {
+                var results=html;
+                results=results.replace('%DATE%',r.result.data[i].timestamp.toDate().toString('dd/MM/yyyy hh:mm'));
+                results=results.replace('%POSTER%',r.result.data[i].username);
+                if (r.result.data[i].text) results=results.replace('%COMMENT%',r.result.data[i].text); else {
+                    if (r.result.data[i].state==1) results=results.replace('%STATE%',"Posé");                        
+                    if (r.result.data[i].state==2) results=results.replace('%STATE%',"Attribué");                        
+                    if (r.result.data[i].state==3) results=results.replace('%STATE%',"En cours");                        
+                    if (r.result.data[i].state==4) results=results.replace('%STATE%',"Traité");                        
+                    if (r.result.data[i].state==5) results=results.replace('%STATE%',"Clos");                        
+                };
+                tpl.push(results);
+            };
+            results='<ul class="timeline">'+tpl.join('')+'</ul>';        
+            App.get(p,'panel#timeline').update(results);             
+        });
     },
 	newticket_onclick: function()
 	{
