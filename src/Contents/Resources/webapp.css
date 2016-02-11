@@ -107,6 +107,7 @@
   }
   .timeline-content2:before {
     content: 'Posé';
+    color: #e5e5d1;
     font-weight: bold;
     font-align: center;
     background: #ffffff;
@@ -117,7 +118,7 @@
     border: 2px solid #e5e5d1;
     padding: 20px; 
     width: 60px;
-    height: 30px; 
+    height: 20px; 
   }
   .timeline-content:before {
     content: '';
