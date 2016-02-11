@@ -20,7 +20,7 @@ App.view.define('VNewTicket', {
         this.record = {};
 		
         this.defaults = {
-            split: true
+            split: false
         };
 
         this.items = [
