@@ -55,7 +55,7 @@ App.view.define('VNewTicket', {
                     },
                     {
                         xtype: "htmleditor",
-                        height: 250,
+                        height: 180,
                         margin: 5,
                         width: "100%",
                         fieldLabel: "Demande",
