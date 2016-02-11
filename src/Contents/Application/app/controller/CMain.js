@@ -62,7 +62,8 @@ App.controller.define('CMain', {
                 agent_nom: App.get(p.up('window'),'combo#agent').getRawValue(),
                 titre: App.get(p.up('window'),'textfield#titre').getValue(),
                 demande: App.get(p.up('window'),'htmleditor#demande').getValue(),
-                date_depot: d
+                date_depot: d,
+                state: 1
             };
             App.DB.post('infocentre://ticket',o,function(){
                         
