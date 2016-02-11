@@ -47,6 +47,18 @@ App.view.define('VNewTicket', {
                 layout: "vbox",
                 items: [
                     {
+                        xtype: "combo",
+                        width: "100%",
+                        triggerConfig: {
+                            tag: "img",
+                            cls: "x-form-trigger x-form-search-trigger",
+                            src: Ext.BLANK_IMAGE_URL
+                        },                        
+                        margin: 5,
+                        fieldLabel: "Agent concerné",
+                        labelAlign: "top"              
+                    },
+                    {
                         xtype: "textfield",
                         width: "100%",
                         margin: 5,
