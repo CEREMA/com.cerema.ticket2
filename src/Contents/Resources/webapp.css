@@ -137,3 +137,8 @@
     border-radius: 100%;
   }
 }
+
+.bd
+{
+    background-image:url(webapp/bd.png);
+}
