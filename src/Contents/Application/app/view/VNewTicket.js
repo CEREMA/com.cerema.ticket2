@@ -29,7 +29,6 @@ App.view.define('VNewTicket', {
                 layout: "fit",
                 title: "Historique",
                 width: 570,
-                border: false,
                 tbar: [
                     {
                         text: "Ajouter un commentaire"   
@@ -52,7 +51,7 @@ App.view.define('VNewTicket', {
                         xtype: "combo",
                         width: "100%",
                         typeAhead: true,
-                        tpl: '<tpl for="."><div class="x-combo-list-item" ><b>{nomprenom}</b><br>Département: - Service: -</div></tpl>', 
+                        /*tpl: '<tpl for="."><div class="x-combo-list-item" ><b>{nomprenom}</b><br>Département: - Service: -</div></tpl>', */
                         triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
                         margin: 5,
                         hideTrigger: false,
