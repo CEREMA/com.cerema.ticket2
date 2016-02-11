@@ -47,9 +47,22 @@ App.controller.define('CMain', {
 			Ext.Msg.alert('Status', 'Click event on '+p.itemId);
 		};			*/
 	},
-    newticket_onshow: function()
+    newticket_onshow: function(p)
     {
-        console.log(this.rek);
+        console.log(this.record);
+        var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
+        var tpl=[];
+        /*for (var i=0;i<r.result.data.length;i++) {
+            var results=html;
+            results=results.replace('%DATE%',r.result.data[i].date.toDate().toString('dd/MM/yyyy hh:mm'));
+            results=results.replace('%POSTER%',r.result.data[i].nomprenom);
+            results=results.replace('%COMMENT%',r.result.data[i].blog);
+            tpl.push(results);
+        };*/
+        var results=html;
+        tpl.push(results);
+        results='<ul class="timeline">'+tpl.join('')+'</ul>';        
+        App.get(p,'panel#timeline').update(results);
     },
 	newticket_onclick: function()
 	{
