@@ -47,7 +47,17 @@ App.view.define('VNewTicket', {
                 layout: "vbox",
                 items: [
                     {
-                        html: "yes"   
+                        xtype: "textfield",
+                        width: "100%",
+                        fieldLabel: "Titre",
+                        labelAlign: "top"
+                    },
+                    {
+                        xtype: "htmleditor",
+                        height: 250,
+                        width: "100%",
+                        fieldLabel: "Demande",
+                        labelAlign: "top"
                     }                    
                 ]
             }
