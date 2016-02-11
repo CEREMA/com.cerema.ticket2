@@ -37,6 +37,7 @@ App.view.define('VNewTicket', {
                 items: [
                     {
                         itemId: "timeline",
+                        width: "100%",
                         html: ""
                     }
                 ]                
