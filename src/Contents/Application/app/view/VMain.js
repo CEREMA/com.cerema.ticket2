@@ -214,7 +214,7 @@ App.view.define('VMain', {
 						},
 						{
 							text: "",
-							width: 100,
+							width: 80,
 							dataIndex: "state",
 							renderer: function(value, meta, record){
 								if (value==-1) return "";
