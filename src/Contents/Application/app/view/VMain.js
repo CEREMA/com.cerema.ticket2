@@ -197,7 +197,7 @@ App.view.define('VMain', {
 						},
 						{
 							text: "Etat",
-							width: 100,
+							width: 90,
 							dataIndex: "state",
 							renderer: function(x) {
 								var result="";
@@ -214,7 +214,7 @@ App.view.define('VMain', {
 						},
 						{
 							text: "",
-							width: 150,
+							width: 120,
 							dataIndex: "state",
 							renderer: function(value, meta, record){
 								if (value==-1) return "";
