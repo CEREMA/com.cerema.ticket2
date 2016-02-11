@@ -23,7 +23,7 @@ App.controller.define('CMain', {
 				click: "newticket_onclick"
 			},
             "mainform grid#maingrid": {
-                itemdblclick: "grid_onclick"  
+                itemclick: "grid_onclick"  
             },
             "VNewTicket": {
                 show: "newticket_onshow"   
