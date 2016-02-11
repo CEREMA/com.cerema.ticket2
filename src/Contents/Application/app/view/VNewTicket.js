@@ -63,7 +63,7 @@ App.view.define('VNewTicket', {
                         labelAlign: "top",
                         displayField: "nomprenom",
                         valueField: "Kage",
-                        store: App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.libunic,subdis.libsubc,Kage}?actif=1",{autoLoad: true}),
+                        store: App.store.create(fields:[],data:[]),
                         selectOnFocus:true
                     },
                     {
