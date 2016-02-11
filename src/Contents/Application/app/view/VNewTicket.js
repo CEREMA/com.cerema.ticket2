@@ -59,7 +59,7 @@ App.view.define('VNewTicket', {
                         displayField: "nomprenom",
                         valueField: "Kage",
                         store: App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom,Kage}?actif=1",{autoLoad: true}),
-                        
+                        selectOnFocus:true
                     },
                     {
                         xtype: "textfield",
