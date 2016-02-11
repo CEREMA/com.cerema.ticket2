@@ -49,11 +49,17 @@ App.view.define('VNewTicket', {
                     {
                         xtype: "combo",
                         width: "100%",
+                        typeAhead: true,
+                        tpl: '<tpl for="."><div class="x-combo-list-item" ><b>{nomprenom}</b><br>Département: - Service: -</div></tpl>', 
                         triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
                         margin: 5,
                         hideTrigger: false,
                         fieldLabel: "Agent concerné",
-                        labelAlign: "top"              
+                        labelAlign: "top",
+                        displayField: "nomprenom",
+                        valueField: "Kage",
+                        store: App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom,Kage}",{autoLoad: true}),
+                        
                     },
                     {
                         xtype: "textfield",
