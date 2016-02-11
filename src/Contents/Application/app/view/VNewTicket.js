@@ -49,11 +49,7 @@ App.view.define('VNewTicket', {
                     {
                         xtype: "combo",
                         width: "100%",
-                        triggerConfig: {
-                            tag: "img",
-                            cls: "x-form-trigger x-form-search-trigger",
-                            src: Ext.BLANK_IMAGE_URL
-                        },                        
+                        triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
                         margin: 5,
                         hideTrigger: false,
                         fieldLabel: "Agent concerné",
