@@ -38,7 +38,6 @@ App.controller.define('CMain', {
 	},
     grid_onclick: function(item,record) 
     {
-        alert('x');
 		App.view.create('VNewTicket',{
 			modal: true,
             record: record.data
@@ -52,7 +51,6 @@ App.controller.define('CMain', {
 	},
     newticket_validate: function(p)
     {
-        alert(this.record);
         if (!this.record) {
             // c'est un nouveau ticket
             
@@ -81,7 +79,7 @@ App.controller.define('CMain', {
     {
         p.center();
         console.log('-----------------');
-        console.log(this.record);
+        console.log(p.record);
         console.log('-----------------');
         if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
             var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.kuni,subdis.ksub,unites.libunic,subdis.libsubc,Kage}?actif=1");  
