@@ -12,6 +12,17 @@ App.view.define('VNewTicket', {
         };
 
         this.bbar = [
+            {
+                text: "Annuler",
+                handler: function(p) {
+                    p.up('window').close();
+                }
+            },
+            '->',
+            {
+                text: "Valider",
+                itemId: "validate"
+            }
         ];
 
         this.tbar = [
@@ -56,7 +67,6 @@ App.view.define('VNewTicket', {
                         queryMode: 'local',
                         forceSelection: true, 
                         triggerAction: 'query',                        
-                        /*tpl: '<tpl for="."><div class="x-combo-list-item"><b>{nomprenom}</b><br>Département: {libunic} - Service: {libsubc}</div></tpl>', */
                         triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
                         margin: 5,
                         hideTrigger: false,
