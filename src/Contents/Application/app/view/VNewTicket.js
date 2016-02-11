@@ -40,7 +40,7 @@ App.view.define('VNewTicket', {
                 region: "east",
                 layout: "fit",
                 title: "Historique",
-                width: 250,
+                width: 450,
                 tbar: [
                     {
                         text: "Ajouter un commentaire"   
@@ -48,7 +48,8 @@ App.view.define('VNewTicket', {
                 ],
                 items: [
                     {
-                        html: "yes"   
+                        itemId: "timeline",
+                        html: ""
                     }
                 ]                
             },
