@@ -39,7 +39,7 @@ App.view.define('VNewTicket', {
             {
                 region: "east",
                 layout: "fit",
-                title: "Timeline",
+                title: "Historique",
                 width: 250,
                 tbar: [
                     {
