@@ -38,6 +38,7 @@ App.controller.define('CMain', {
 	},
     grid_onclick: function(item,record) 
     {
+        alert('x');
         console.log(record);
 		App.view.create('VNewTicket',{
 			modal: true,
