@@ -69,8 +69,8 @@ App.controller.define('CMain', {
             App.get(p,'combo#agent').bindStore(store);            
         };
         App.get(p,'combo#agent').getStore().load();
-        var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
-        html+='<li><p class="timeline-date2">%DATE%</p><div class="timeline-content2"><div class="timeline-content2p">Posé</div>&nbsp;&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;</div></li>';
+        var html0='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
+        var html1='<li><p class="timeline-date2">%DATE%</p><div class="timeline-content2"><div class="timeline-content2p">Posé</div>&nbsp;&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;</div></li>';
         var tpl=[];
         /*for (var i=0;i<r.result.data.length;i++) {
             var results=html;
@@ -79,8 +79,6 @@ App.controller.define('CMain', {
             results=results.replace('%COMMENT%',r.result.data[i].blog);
             tpl.push(results);
         };*/
-        var results=html;
-        tpl.push(results);
         results='<ul class="timeline">'+tpl.join('')+'</ul>';        
         App.get(p,'panel#timeline').update(results);
     },
