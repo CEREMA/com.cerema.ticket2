@@ -105,8 +105,7 @@
     border-left: 3px #e5e5d1 solid;
     padding-left: 30px;
   }
-  .timeline-content2:before {
-    content: 'Posé';
+  .timeline-content2 {
     color: #6fc173;
     font-weight: bold;
     font-align: center;
