@@ -39,7 +39,6 @@ App.controller.define('CMain', {
     grid_onclick: function(item,record) 
     {
         alert('x');
-        console.log(record);
 		App.view.create('VNewTicket',{
 			modal: true,
             record: record.data
@@ -53,6 +52,7 @@ App.controller.define('CMain', {
 	},
     newticket_validate: function(p)
     {
+        alert(this.record);
         if (!this.record) {
             // c'est un nouveau ticket
             
