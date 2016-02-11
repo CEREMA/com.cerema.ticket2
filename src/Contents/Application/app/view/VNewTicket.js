@@ -29,6 +29,7 @@ App.view.define('VNewTicket', {
                 layout: "fit",
                 title: "Historique",
                 width: 570,
+                border: false,
                 tbar: [
                     {
                         text: "Ajouter un commentaire"   
@@ -36,6 +37,7 @@ App.view.define('VNewTicket', {
                 ],
                 items: [
                     {
+                        border: false,
                         itemId: "timeline",
                         width: "100%",
                         html: ""
