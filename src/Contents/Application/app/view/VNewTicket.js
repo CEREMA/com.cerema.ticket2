@@ -77,7 +77,7 @@ App.view.define('VNewTicket', {
                         height: 180,
                         margin: 5,
                         width: "100%",
-                        fieldLabel: "Demande",
+                        fieldLabel: "Demande initiale",
                         labelAlign: "top"
                     }                    
                 ]
