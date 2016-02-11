@@ -77,6 +77,7 @@ App.view.define('VNewTicket', {
                     },
                     {
                         xtype: "textfield",
+                        itemId: "titre",
                         width: "100%",
                         margin: 5,
                         fieldLabel: "Titre",
@@ -84,6 +85,7 @@ App.view.define('VNewTicket', {
                     },
                     {
                         xtype: "htmleditor",
+                        itemId: "demande",
                         height: 180,
                         margin: 5,
                         width: "100%",
