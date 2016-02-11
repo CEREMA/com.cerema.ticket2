@@ -93,6 +93,11 @@
     float: left;
     margin-top: 22px;
   }
+  .timeline-date2 {
+    width: 130px;
+    float: left;
+    margin-top: 15px;
+  }    
   .timeline-content {
     width: 75%;
     float: left;
