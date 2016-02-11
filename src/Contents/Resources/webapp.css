@@ -99,6 +99,22 @@
     border-left: 3px #e5e5d1 solid;
     padding-left: 30px;
   }
+  .timeline-content2 {
+    width: 75%;
+    float: left;
+    border-left: 3px #e5e5d1 solid;
+    padding-left: 30px;
+  }
+  .timeline-content2:before {
+    content: 'xxxx';
+    width: 12px;
+    height: 12px;
+    background: #6fc173;
+    position: absolute;
+    left: 106px;
+    top: 24px;
+    border-radius: 100%;
+  }
   .timeline-content:before {
     content: '';
     width: 12px;
