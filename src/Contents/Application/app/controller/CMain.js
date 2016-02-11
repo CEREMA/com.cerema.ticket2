@@ -115,9 +115,21 @@ App.controller.define('CMain', {
         var extraParams=App.get('mainform grid#maingrid').getStore().getProxy().extraParams;
         switch(record.data.id) {
             case 1:
-                var store=App.store.create('App.Demandes.mytickets',{groupField: "agent_departement"});
-                store.getProxy().extraParams=extraParams;
-			    store.getProxy().extraParams.id=Auth.User.uid;
+                if (Auth.User.profiles.indexOf('SII')>-1) {
+                     var store=App.store.create('App.Demandes.mytickets',{groupField: "agent_departement"});
+                     store.getProxy().extraParams=extraParams;
+			         store.getProxy().extraParams.id=Auth.User.uid;                    
+                };
+                if (Auth.User.profiles.indexOf('GEST')>-1) {
+                     var store=App.store.create('App.Demandes.mytickets',{groupField: "agent_departement"});
+                     store.getProxy().extraParams=extraParams;
+			         store.getProxy().extraParams.id=Auth.User.uid;                    
+                };
+                if (Auth.User.profiles.indexOf('CLI')>-1) {
+                     var store=App.store.create('App.Demandes.myclitickets',{groupField: "agent_departement"});
+                     store.getProxy().extraParams=extraParams;
+			         store.getProxy().extraParams.id=Auth.User.uid;                    
+                };
                 App.get('mainform grid#maingrid').bindStore(store);                
                 App.get('mainform grid#maingrid').getStore().load();
                 break;
