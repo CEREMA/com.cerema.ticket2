@@ -112,6 +112,8 @@
     font-align: center;
     background: #ffffff;
     position: absolute;
+    vertical-align: middle;
+    align: center;
     left: 56px;
     top: 24px;
     border-radius: 25px;
