@@ -54,7 +54,7 @@ App.controller.define('CMain', {
     {
         if (!this.record) {
             // c'est un nouveau ticket
-            var record=p.up('window'),'combo#agent').getStore().getById(App.get(p.up('window'),'combo#agent').getValue());
+            var record=App.get(p.up('window'),'combo#agent').getStore().getById(App.get(p.up('window'),'combo#agent').getValue());
             console.log(record);
             return;
             var d=new Date();
