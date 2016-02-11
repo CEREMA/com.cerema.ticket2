@@ -82,7 +82,8 @@ App.view.define('VNewTicket', {
                     },
                     {
                         xtype: "checkbox",
-                        boxLabel: "Demande d'achat"
+                        boxLabel: "Demande d'achat",
+                        margin: 5
                     }
                 ]
             }
