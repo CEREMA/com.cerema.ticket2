@@ -31,7 +31,8 @@ App.view.define('VNewTicket', {
                 width: 570,
                 tbar: [
                     {
-                        text: "Ajouter un commentaire"   
+                        text: "Ajouter un commentaire",
+                        iconCls: "bd"
                     }
                 ],
                 items: [
