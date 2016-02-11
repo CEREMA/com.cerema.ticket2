@@ -50,8 +50,8 @@ App.controller.define('CMain', {
     newticket_onshow: function(p)
     {
         console.log(this.record);
-        //var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
-        var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content2"><div class="timeline-content2p">ddd</div>&nbsp;&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;</div></li>';
+        var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
+        html+='<li><p class="timeline-date">%DATE%</p><div class="timeline-content2"><div class="timeline-content2p">Posé</div>&nbsp;&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;</div></li>';
         var tpl=[];
         /*for (var i=0;i<r.result.data.length;i++) {
             var results=html;
