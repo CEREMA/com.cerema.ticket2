@@ -205,25 +205,24 @@ App.controller.define('CMain', {
                             id: 2,
                             title: "Tickets posés"
                         });
-                        {
+                        data.push({
                             id: 3,
                             title: "Tickets attribués"
-                        },
-                        {
+                        });
+                        data.push({
                             id: 4,
                             title: "Tickets en cours"
-                        },
-                        {
+                        });
+                        data.push({
                             id: 5,
                             title: "Tickets traités"
-                        },
-                        {
-                            id: 6,
-                            title: "Archive"
-              }                      
+                        });
               };
-              
-              App.get('mainform dataview').getStore().loadData();
+                data.push({
+                    id: 6,
+                    title: "Archive"
+                });                                    
+              App.get('mainform dataview').getStore().loadData(data);
               App.get('mainform dataview').select(0);
               var grid=App.get('mainform grid#maingrid').getStore();
               grid.getProxy().extraParams.uid=Auth.User.uid;
