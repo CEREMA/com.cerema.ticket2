@@ -111,17 +111,15 @@
     font-align: center;
     background: #ffffff;
     position: absolute;
-    align-content: center;
-    -webkit-align-content: center;
     align: center;
     left: 70px;
     top: 10px;
     border-radius: 25px;
     border: 2px solid #6fc173;
     padding: 10px; 
-    width: 60px;
+    width: 100px;
     height: 1px;
-    line-height: 5px;
+    line-height: 1px;
   }
   .timeline-content:before {
     content: '';
