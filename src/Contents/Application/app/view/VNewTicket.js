@@ -50,7 +50,7 @@ App.view.define('VNewTicket', {
                     {
                         xtype: "combo",
                         width: "100%",
-                        typeAhead: true,
+                        typeAhead: false,
                         queryMode: 'local',
                         forceSelection: true, 
                         triggerAction: 'query',                        
