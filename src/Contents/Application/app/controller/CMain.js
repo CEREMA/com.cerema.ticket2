@@ -54,13 +54,15 @@ App.controller.define('CMain', {
     {
         if (!this.record) {
             // c'est un nouveau ticket
+            var d=new Date();
             var o={
                 cli: Auth.User.uid,
                 cli_nom: Auth.User.lastname+' '+Auth.User.firstname,
                 agent: App.get(p.up('window'),'combo#agent').getValue(),
                 agent_nom: App.get(p.up('window'),'combo#agent').getRawValue(),
                 titre: App.get(p.up('window'),'textfield#titre').getValue(),
-                demande: App.get(p.up('window'),'htmleditor#demande').getValue()
+                demande: App.get(p.up('window'),'htmleditor#demande').getValue(),
+                date_depot: d
             };
             App.DB.post('infocentre://ticket',o,function(){
                         
