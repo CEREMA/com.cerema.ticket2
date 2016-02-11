@@ -70,8 +70,16 @@ App.controller.define('CMain', {
                 agent_service_id: record.get('ksub'),
                 state: 1
             };
-            App.DB.post('infocentre://ticket',o,function(){
-                        
+            App.DB.post('infocentre://ticket',o,function(r){
+                App.DB.post('infocentre://ticket_timeline',{
+                    ticket_id: r.insertId,
+                    timestamp: d,
+                    username: Auth.User.lastname+' '+Auth.User.firstname,
+                    userid: Auth.User.uid,
+                    state: 1
+                },function(r){
+                    p.up('window').close();
+                })          
             });
         }
     },
