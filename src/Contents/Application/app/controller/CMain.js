@@ -51,7 +51,7 @@ App.controller.define('CMain', {
 	},
     newticket_validate: function(p)
     {
-        if (!this.record) {
+        if (!p.record) {
             // c'est un nouveau ticket
             
             var record=App.get(p.up('window'),'combo#agent').findRecordByValue(App.get(p.up('window'),'combo#agent').getValue());
@@ -78,9 +78,11 @@ App.controller.define('CMain', {
     newticket_onshow: function(p)
     {
         p.center();
-        console.log('-----------------');
-        console.log(p.record);
-        console.log('-----------------');
+        if (p.record) {
+            App.DB.get('infocentre://ticket?id='+p.record.id,p.up('window'),function(r){
+                
+            });  
+        };
         if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
             var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.kuni,subdis.ksub,unites.libunic,subdis.libsubc,Kage}?actif=1");  
             App.get(p,'combo#agent').bindStore(store);            
