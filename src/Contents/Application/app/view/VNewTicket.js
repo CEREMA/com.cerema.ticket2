@@ -58,7 +58,7 @@ App.view.define('VNewTicket', {
                         labelAlign: "top",
                         displayField: "nomprenom",
                         valueField: "Kage",
-                        store: App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom,Kage}",{autoLoad: true}),
+                        store: App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom,Kage}?actif=1",{autoLoad: true}),
                         
                     },
                     {
