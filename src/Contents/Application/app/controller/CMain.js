@@ -49,9 +49,17 @@ App.controller.define('CMain', {
 	},
     newticket_onshow: function(p)
     {
-        console.log(this.record);
-        console.log(Auth.User.profiles);
         p.center();
+        console.log(this.record);
+        if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
+            var store=App.store("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.libunic,subdis.libsubc,Kage}?actif=1");  
+            App.get(p,'combo#agent').bindStore(store);            
+        };
+        if (Auth.User.profiles.indexOf('CLI')>-1) {
+            var store=App.store("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.libunic,subdis.libsubc,Kage}?actif=1&kuni="+Auth.User.kuni);  
+            App.get(p,'combo#agent').bindStore(store);            
+        };
+        App.get(p,'combo#agent').getStore().load();
         var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
         html+='<li><p class="timeline-date2">%DATE%</p><div class="timeline-content2"><div class="timeline-content2p">Posé</div>&nbsp;&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;</div></li>';
         var tpl=[];
