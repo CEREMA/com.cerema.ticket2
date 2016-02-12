@@ -144,6 +144,7 @@ App.controller.define('CMain', {
             App.DB.get('infocentre://ticket?id='+p.record.id,p,function(r){
                 var html=[];
                 html.push("Agent concerné :<br><b>"+r.data[0].agent_nom+"</b><br>");
+                alert(html.join(''));
                 App.get(p,"panel#sumup").update(html.join(''));
                 //App.get(p,"panel#cli").update("<b>Déposé par "+r.data[0].cli_nom+'</b>');
             });  
