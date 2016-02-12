@@ -111,9 +111,6 @@ App.view.define('VNewTicket', {
                         margin: 5
                     },
                     {
-                        flex: 1  
-                    },
-                    {
                         xtype: 'chart',
                         style: 'background:#fff',
                         height: 200,
