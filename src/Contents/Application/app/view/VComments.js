@@ -6,20 +6,33 @@ App.view.define('VComments', {
         this.height = 660;
 
         this.layout = {
-            type: 'vbox'
+            type: 'fit'
         };
 
-        this.bbar = [
-        ];
+        this.title = "Commentaire";
 
-        this.tbar = [
+        this.bbar = [
+            '->',
+            {
+                text: "Enregistrer",
+                handler: function(p) {
+                    p.up('window').close()   
+                }
+            },
+            {
+                text: "Enregistrer",
+                itemId: "record"
+            }
         ];
 		
         this.defaults = {
-            split: true
         };
 
         this.items = [
+            {
+                xtype: "htmleditor",
+                itemId: "edit"
+            }
 		];
 
         this.callParent();
