@@ -48,6 +48,7 @@ App.controller.define('CMain', {
         App.DB.post('infocentre://ticket_timeline',{
             ticket_id: p.up('window').record.id,
             timestamp: new Date(),
+            text: App.get(p.up('window'),'htmleditor#edit').getValue(),
             username: Auth.User.lastname+' '+Auth.User.firstname,
             userid: Auth.User.uid
         },function(r){
