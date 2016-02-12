@@ -29,7 +29,8 @@ App.view.define('VNewTicket', {
             {
                 text: "Attribution",
                 iconCls: "attr",
-                itemId: "attr"
+                itemId: "attr",
+                hidden: true
             }
         ];
 		
