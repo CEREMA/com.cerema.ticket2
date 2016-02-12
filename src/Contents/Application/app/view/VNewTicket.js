@@ -65,9 +65,13 @@ App.view.define('VNewTicket', {
                 layout: "vbox",
                 items: [
                     {
+                        html: "",
+                        itemId: "sumup",
+                        hidden: true
+                    },
+                    {
                         xtype: "combo",
                         itemId: "agent",
-                        disabledCls: "disabledComboTestCls",
                         width: "100%",
                         typeAhead: false,
                         queryMode: 'local',
@@ -85,16 +89,6 @@ App.view.define('VNewTicket', {
                         bind: "agent"
                     },
                     {
-                        xtype: "textfield",
-                        itemId: "titre",
-                        disabledCls: "disabledComboTestCls",
-                        width: "100%",
-                        margin: 5,
-                        fieldLabel: "Titre",
-                        labelAlign: "top",
-                        bind: "titre"
-                    },
-                    {
                         xtype: "panel",                        
                         margin: 5,
                         html: "",
@@ -102,11 +96,19 @@ App.view.define('VNewTicket', {
                         width: "100%",
                         border: false,
                         height: 30
+                    },                    
+                    {
+                        xtype: "textfield",
+                        itemId: "titre",
+                        width: "100%",
+                        margin: 5,
+                        fieldLabel: "Titre",
+                        labelAlign: "top",
+                        bind: "titre"
                     },
                     {
                         xtype: "htmleditor",
                         itemId: "demande",
-                        disabledCls: "disabledComboTestCls",
                         height: 180,
                         margin: 5,
                         width: "100%",
@@ -117,6 +119,7 @@ App.view.define('VNewTicket', {
                     {
                         xtype: "checkbox",
                         boxLabel: "Demande d'achat",
+                        itemId: "DA",
                         disabledCls: "disabledComboTestCls",
                         margin: 5
                     },
