@@ -142,13 +142,15 @@ App.controller.define('CMain', {
                 App.get(p,'button#attr').show();
             };            
             App.DB.get('infocentre://ticket?id='+p.record.id,p,function(r){
+                var html=[];
+                html.push("");
                 App.get(p,"panel#cli").update("<b>Déposé par "+r.data[0].cli_nom+'</b>');
-                App.get(p,'combo#agent').hide();
-                App.get(p,'textfield#titre').hide();
-                App.get(p,'htmleditor#demande').hide();
-                App.get(p,'panel#cli').hide();
             });  
         } else {
+            App.get(p,'combo#agent').show();
+            App.get(p,'textfield#titre').show();
+            App.get(p,'htmleditor#demande').show();
+            App.get(p,'panel#cli').show();            
             App.get(p,"panel#cli").update("<b>Déposé par "+Auth.User.lastname+' '+Auth.User.firstname+'</b>');
         };
         if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
