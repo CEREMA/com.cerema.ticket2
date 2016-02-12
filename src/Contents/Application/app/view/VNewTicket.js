@@ -88,6 +88,7 @@ App.view.define('VNewTicket', {
                     },
                     {
                         xtype: "panel",
+                        margin: 5,
                         html: "",
                         itemId: "cli",
                         width: "100%",
@@ -108,7 +109,48 @@ App.view.define('VNewTicket', {
                         xtype: "checkbox",
                         boxLabel: "Demande d'achat",
                         margin: 5
-                    }
+                    },
+                    {
+                        flex: 1  
+                    },
+                    {
+                        xtype: 'chart',
+                        style: 'background:#fff',
+                        height: 200,
+                        width: "100%",
+                        margin: {
+                            right: 5
+                        },
+                        animate: {
+                            easing: 'bounceOut',
+                            duration: 1000
+                        },
+                        store: App.store.create(
+                        {
+                            fields: ['name', 'data1'],
+                            data: [{
+                                name: "test",
+                                data1: 10
+                            }]
+                        }
+                        ),
+                        insetPadding: 25,
+                        flex: 1,
+                        axes: [{
+                            type: 'gauge',
+                            position: 'gauge',
+                            minimum: 0,
+                            maximum: 100,
+                            steps: 10,
+                            margin: 7
+                        }],
+                        series: [{
+                            type: 'gauge',
+                            field: 'data1',
+                            donut: 80,
+                            colorSet: ['#3AA8CB', '#ddd']
+                        }]
+                    }		                    
                 ]
             }
 		];
