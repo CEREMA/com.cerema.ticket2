@@ -68,6 +68,8 @@ App.view.define('VNewTicket', {
                         html: "",
                         flex: 1,
                         width: "100%",
+                        margin: 5,
+                        border: false,
                         itemId: "sumup",
                         hidden: true
                     },
