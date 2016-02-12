@@ -140,7 +140,7 @@ App.controller.define('CMain', {
         var me=this;
         if (p.record) {
             App.DB.get('infocentre://ticket?id='+p.record.id,p,function(r){
-                console.log(r);
+                console.log(r.data);
                 App.get(p,"panel#cli").update("<b>Déposé par ")+r.data[0].cli_nom+'</b>';
             });  
         };
