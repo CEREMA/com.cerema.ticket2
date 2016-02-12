@@ -87,6 +87,11 @@ App.view.define('VNewTicket', {
                         bind: "titre"
                     },
                     {
+                        html: "",
+                        itemId: "cli",
+                        height: 30
+                    },
+                    {
                         xtype: "htmleditor",
                         itemId: "demande",
                         height: 180,
