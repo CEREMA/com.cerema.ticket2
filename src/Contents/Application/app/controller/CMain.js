@@ -51,7 +51,8 @@ App.controller.define('CMain', {
             text: App.get(p.up('window'),'htmleditor#edit').getValue(),
             username: Auth.User.lastname+' '+Auth.User.firstname,
             userid: Auth.User.uid
-        },function(r){
+        },function(r){            
+            me.updateComments(p.up('window'));
             p.up('window').close();
         });
     },
@@ -109,27 +110,12 @@ App.controller.define('CMain', {
             });
         }
     },
-    newticket_onshow: function(p)
+    updateComments: function(p)
     {
-        p.center();
-        if (p.record) {
-            App.DB.get('infocentre://ticket?id='+p.record.id,p,function(r){
-                
-            });  
-        };
-        if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
-            var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.kuni,subdis.ksub,unites.libunic,subdis.libsubc,Kage}?actif=1");  
-            App.get(p,'combo#agent').bindStore(store);            
-        };
-        if (Auth.User.profiles.indexOf('CLI')>-1) {
-            var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.kuni,subdis.ksub,unites.libunic,subdis.libsubc,Kage}?actif=1&kuni="+Auth.User.kuni);  
-            App.get(p,'combo#agent').bindStore(store);            
-        };
-        App.get(p,'combo#agent').getStore().load();
         var html0='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
         var html1='<li><p class="timeline-date2">%DATE%</p><div class="timeline-content2"><div class="timeline-content2p">%STATE%</div>&nbsp;&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;</div></li>';
         var tpl=[];
-        App.DB.get("infocentre://ticket_timeline?ticket_id="+p.record.id,function(e,r){
+        App.DB.get("infocentre://ticket_timeline{id,timestamp-,username,userid,text,state}?ticket_id="+p.record.id,function(e,r){
             for (var i=0;i<r.result.data.length;i++) {
                 if (r.result.data[i].text) var results=html0; else var results=html1;
                 results=results.replace('%DATE%',r.result.data[i].timestamp.toDate().toString('dd/MM/yyyy<br>hh:mm'));
@@ -145,7 +131,27 @@ App.controller.define('CMain', {
             };
             results='<ul class="timeline">'+tpl.join('')+'</ul>';        
             App.get(p,'panel#timeline').update(results);             
-        });
+        });        
+    },
+    newticket_onshow: function(p)
+    {
+        p.center();
+        var me=this;
+        if (p.record) {
+            App.DB.get('infocentre://ticket?id='+p.record.id,p,function(r){
+                
+            });  
+        };
+        if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
+            var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.kuni,subdis.ksub,unites.libunic,subdis.libsubc,Kage}?actif=1");  
+            App.get(p,'combo#agent').bindStore(store);            
+        };
+        if (Auth.User.profiles.indexOf('CLI')>-1) {
+            var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.kuni,subdis.ksub,unites.libunic,subdis.libsubc,Kage}?actif=1&kuni="+Auth.User.kuni);  
+            App.get(p,'combo#agent').bindStore(store);            
+        };
+        App.get(p,'combo#agent').getStore().load();
+        me.updateComments(p);
     },
 	newticket_onclick: function()
 	{
