@@ -26,6 +26,11 @@ App.view.define('VNewTicket', {
         ];
 
         this.tbar = [
+            {
+                text: "Attribution",
+                iconCls: "attr",
+                itemId: "attr"
+            }
         ];
 		
         this.defaults = {
