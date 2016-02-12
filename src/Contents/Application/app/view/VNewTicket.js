@@ -71,6 +71,7 @@ App.view.define('VNewTicket', {
                     },
                     {
                         xtype: "combo",
+                        hidden: true,
                         itemId: "agent",
                         width: "100%",
                         typeAhead: false,
@@ -90,6 +91,7 @@ App.view.define('VNewTicket', {
                     },
                     {
                         xtype: "panel",                        
+                        hidden: true,
                         margin: 5,
                         html: "",
                         itemId: "cli",
@@ -99,6 +101,7 @@ App.view.define('VNewTicket', {
                     },                    
                     {
                         xtype: "textfield",
+                        hidden: true,
                         itemId: "titre",
                         width: "100%",
                         margin: 5,
@@ -108,6 +111,7 @@ App.view.define('VNewTicket', {
                     },
                     {
                         xtype: "htmleditor",
+                        hidden: true,
                         itemId: "demande",
                         height: 180,
                         margin: 5,
@@ -119,6 +123,7 @@ App.view.define('VNewTicket', {
                     {
                         xtype: "checkbox",
                         boxLabel: "Demande d'achat",
+                        hidden: true,
                         itemId: "DA",
                         margin: 5
                     },

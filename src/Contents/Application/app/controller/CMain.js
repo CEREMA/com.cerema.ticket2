@@ -151,6 +151,7 @@ App.controller.define('CMain', {
             App.get(p,'textfield#titre').show();
             App.get(p,'htmleditor#demande').show();
             App.get(p,'panel#cli').show();            
+            App.get(p,'checkbox#DA').show();
             App.get(p,"panel#cli").update("<b>Déposé par "+Auth.User.lastname+' '+Auth.User.firstname+'</b>');
         };
         if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
