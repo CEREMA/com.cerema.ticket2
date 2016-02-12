@@ -106,7 +106,7 @@ App.controller.define('CMain', {
         App.DB.get("infocentre://ticket_timeline?ticket_id="+p.record.id,function(e,r){
             for (var i=0;i<r.result.data.length;i++) {
                 if (r.result.data[i].text) var results=html0; else var results=html1;
-                results=results.replace('%DATE%',r.result.data[i].timestamp.toDate().toString('dd/MM/yyyy hh:mm'));
+                results=results.replace('%DATE%',r.result.data[i].timestamp.toDate().toString('dd/MM/yyyy<br>hh:mm'));
                 results=results.replace('%POSTER%',r.result.data[i].username);
                 if (r.result.data[i].text) results=results.replace('%COMMENT%',r.result.data[i].text); else {
                     if (r.result.data[i].state==1) results=results.replace('%STATE%',"Posé");                        
