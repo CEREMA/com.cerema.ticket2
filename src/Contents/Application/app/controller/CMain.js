@@ -131,7 +131,7 @@ App.controller.define('CMain', {
                 tpl.push(results);
             };
             results='<ul class="timeline">'+tpl.join('')+'</ul>';        
-            App.get(p,'panel#timeline').update(results);             
+            App.get('VNewTicket panel#timeline').update(results);             
         });        
     },
     newticket_onshow: function(p)
