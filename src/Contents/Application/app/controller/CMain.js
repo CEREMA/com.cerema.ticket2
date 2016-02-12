@@ -141,7 +141,7 @@ App.controller.define('CMain', {
         if (p.record) {
             App.DB.get('infocentre://ticket?id='+p.record.id,p,function(r){
                 console.log(r);
-                App.get(p,"panel#cli").setValue("Déposé par ");
+                App.get(p,"panel#cli").update("Déposé par ");
             });  
         };
         if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
