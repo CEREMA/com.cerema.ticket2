@@ -34,16 +34,31 @@ App.controller.define('CMain', {
             },
             "VNewTicket button#addComment": {
                 click: "addComment_onclick"
+            },
+            "VComments button#record": {
+                click: "recordComments"   
             }
 		});
 		
 		App.init('VMain',this.onLoad);
 		
 	},
-    addComment_onclick: function()
+    recordComments: function(p)
+    {
+        App.DB.post('infocentre://ticket_timeline',{
+            ticket_id: p.up('window').record.id,
+            timestamp: new Date(),
+            username: Auth.User.lastname+' '+Auth.User.firstname,
+            userid: Auth.User.uid
+        },function(r){
+            p.up('window').close();
+        });
+    },
+    addComment_onclick: function(p)
     {
 		App.view.create('VComments',{
-			modal: true
+			modal: true,
+            record: p.up('window').record
 		}).show();          
     },
     grid_onclick: function(item,record) 
