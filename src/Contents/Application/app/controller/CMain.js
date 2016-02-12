@@ -3,7 +3,8 @@ App.controller.define('CMain', {
 
 	views: [
 		"VMain",
-		"VNewTicket"
+		"VNewTicket",
+        "VComments"
 	],
 	
 	models: [
@@ -30,12 +31,21 @@ App.controller.define('CMain', {
             },
             "VNewTicket button#validate": {
                 click: "newticket_validate"
+            },
+            "VNewTicket button#addComment": {
+                click: "addComment_onclick"
             }
 		});
 		
 		App.init('VMain',this.onLoad);
 		
 	},
+    addComment_onclick: function()
+    {
+		App.view.create('VComments',{
+			modal: true
+		}).show();          
+    },
     grid_onclick: function(item,record) 
     {
 		App.view.create('VNewTicket',{
