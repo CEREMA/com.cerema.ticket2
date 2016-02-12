@@ -141,8 +141,10 @@ App.controller.define('CMain', {
         if (p.record) {
             App.DB.get('infocentre://ticket?id='+p.record.id,p,function(r){
                 console.log(r.data[0]);
-                App.get(p,"panel#cli").update("<b>Déposé par ")+r.data[0].cli_nom+'</b>';
+                App.get(p,"panel#cli").update("<b>Déposé par "+r.data[0].cli_nom+'</b>');
             });  
+        } else {
+            App.get(p,"panel#cli").update("<b>Déposé par "+Auth.User.lastname+' '+Auth.User.firstname+'</b>');
         };
         if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
             var store=App.store.create("bpclight://agents{Nom+' '+prenom=nomprenom+,unites.kuni,subdis.ksub,unites.libunic,subdis.libsubc,Kage}?actif=1");  
