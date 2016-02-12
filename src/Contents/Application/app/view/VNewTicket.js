@@ -67,6 +67,7 @@ App.view.define('VNewTicket', {
                     {
                         xtype: "combo",
                         itemId: "agent",
+                        disabledCls: "disabledComboTestCls",
                         width: "100%",
                         typeAhead: false,
                         queryMode: 'local',
