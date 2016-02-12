@@ -45,6 +45,7 @@ App.controller.define('CMain', {
 	},
     recordComments: function(p)
     {
+        var me=this;
         App.DB.post('infocentre://ticket_timeline',{
             ticket_id: p.up('window').record.id,
             timestamp: new Date(),
