@@ -81,7 +81,6 @@ App.controller.define('CMain', {
     {
         if (!p.record) {
             // c'est un nouveau ticket
-            
             var record=App.get(p.up('window'),'combo#agent').findRecordByValue(App.get(p.up('window'),'combo#agent').getValue());
             var d=new Date();
             var o={
@@ -139,9 +138,13 @@ App.controller.define('CMain', {
         p.center();
         var me=this;
         if (p.record) {
+            if (Auth.User.profiles.indexOf('SII')>-1 || Auth.User.profiles.indexOf('GEST')>-1) {
+                App.get(p,'button#attr').show();
+            };            
             App.DB.get('infocentre://ticket?id='+p.record.id,p,function(r){
-                console.log(r.data[0]);
                 App.get(p,"panel#cli").update("<b>Déposé par "+r.data[0].cli_nom+'</b>');
+                App.get(p,'textfield#titre').setReadOnly();
+                App.get(p,'htmleditor#demande').setReadOnly();
             });  
         } else {
             App.get(p,"panel#cli").update("<b>Déposé par "+Auth.User.lastname+' '+Auth.User.firstname+'</b>');
