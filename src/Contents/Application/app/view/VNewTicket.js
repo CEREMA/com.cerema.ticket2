@@ -89,6 +89,8 @@ App.view.define('VNewTicket', {
                     {
                         html: "",
                         itemId: "cli",
+                        width: "100%",
+                        border: false,
                         height: 30
                     },
                     {
