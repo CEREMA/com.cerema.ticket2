@@ -41,7 +41,8 @@ App.view.define('VNewTicket', {
                 tbar: [
                     {
                         text: "Ajouter un commentaire",
-                        iconCls: "bd"
+                        iconCls: "bd",
+                        itemId: "addComment"
                     }
                 ],
                 items: [
