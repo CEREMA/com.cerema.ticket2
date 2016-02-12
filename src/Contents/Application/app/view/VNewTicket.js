@@ -120,7 +120,6 @@ App.view.define('VNewTicket', {
                         xtype: "checkbox",
                         boxLabel: "Demande d'achat",
                         itemId: "DA",
-                        disabledCls: "disabledComboTestCls",
                         margin: 5
                     },
                     {
