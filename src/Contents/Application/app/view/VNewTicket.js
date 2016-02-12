@@ -87,6 +87,7 @@ App.view.define('VNewTicket', {
                         bind: "titre"
                     },
                     {
+                        xtype: "panel",
                         html: "",
                         itemId: "cli",
                         width: "100%",
