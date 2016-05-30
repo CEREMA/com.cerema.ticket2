@@ -1,6 +1,6 @@
 {
     "namespace": "com.cerema.deploy",
-    "git": "",
+    "git": "https://github.com/CEREMA/com.cerema.deploy",
     "title": "Deploy",
     "description": "Omneedia Deploy Manager",
     "platform": "desktop",
@@ -9,7 +9,7 @@
     ],
     "uid": "45c33217-7d62-4ccf-ac23-297adb7ea1ec",
     "version": "1.00",
-    "build": "0",
+    "build": 1,
     "copyright": "Copyright (c) 2016 By CEREMA",
     "license": "BSD",
     "author": {
