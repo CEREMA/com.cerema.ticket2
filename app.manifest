@@ -1,8 +1,8 @@
 {
-    "namespace": "com.cerema.ticket2",
-    "git": "https://github.com/CEREMA/com.cerema.ticket2",
-    "title": "Ticketz",
-    "description": "Gestion des tickets",
+    "namespace": "com.cerema.deploy",
+    "git": "",
+    "title": "Deploy",
+    "description": "Omneedia Deploy Manager",
     "platform": "desktop",
     "targets": [
         "webapp"
@@ -58,10 +58,7 @@
     "api": [
         "Demandes"
     ],
-    "db": [
-        "bpclight",
-        "infocentre"
-    ],
+    "db": [],
     "packages": [],
     "icon": {
         "background": "#FFFFFF",
