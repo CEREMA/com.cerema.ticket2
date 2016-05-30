@@ -41,6 +41,7 @@ App.view.define('VMain', {
             split: true,
             layout:"fit",
             width: 250,
+			title: "Mes drones",
             items: [
                 {
                     xtype: "dataview",
