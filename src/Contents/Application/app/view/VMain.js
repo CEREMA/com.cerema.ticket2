@@ -77,6 +77,12 @@ App.view.define('VMain', {
 					itemId: "maingrid",
                     border: false,
 					width: "100%",
+					tbar: [
+					'->',
+					{
+						text: "xxx"
+					}
+					],
 					columns: [
 						{
 							width: 30,
