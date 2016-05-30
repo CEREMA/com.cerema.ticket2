@@ -84,149 +84,20 @@ App.view.define('VMain', {
 					}
 					],
 					columns: [
-						{
-							width: 30,
-							dataIndex: "DA",
-							renderer: function(value) {
-								if (value) return '<div class="buy">';
-							}
-						},
-						{
-							text: "Id",
-							width: 30,
-							dataIndex: "id",
-							renderer: function(value) {
-								if (!value) var value="";
-								var prepend='<div style="padding:3px"><b>';
-								var append='</b></div>';
-								return prepend+value+append;
-							}
-						},						
-						{
-							text: "Demandeur",
-							width: 200,
-							dataIndex: "agent_nom",
-							renderer: function(value) {
-								var prepend='<div style="padding:3px">';
-								var append='</div>';
-								return prepend+value+append;
-							}							
-						},
-						{
-							text: "Service",
-							width: 50,
-							dataIndex: "agent_service",
-							renderer: function(value) {
-								var prepend='<div style="padding:3px">';
-								var append='</div>';
-								return prepend+value+append;
-							}				
-						},
-						{
-							text: "Titre",
-							flex: 1,
-							dataIndex: "titre",
-							renderer: function(value) {
-								var prepend='<div style="padding:3px">';
-								var append='</div>';
-								return prepend+value+append;
-							}
-						},
-						{
-							text: "Déposé le",
-							dataIndex: "date_depot",
-							width: 150,
-							type: 'date',
-							renderer: function(value) {
-								var prepend='<div style="padding:3px"><b>';
-								var append='</b></div>';
-								return prepend+value.toString('dd/MM/yyyy HH:mm')+append;
-							}
-						},
-						{
-							text: "Pris en charge le",
-							dataIndex: "date_attrib",
-							width: 150,
-							type: 'date',
-							renderer: function(value) {
-								if (!value) var value="";
-								var prepend='<div style="padding:3px"><b>';
-								var append='</b></div>';
-								return prepend+value.toString('dd/MM/yyyy HH:mm')+append;
-							}
-						},
-						{
-							text: "Compétence",
-							dataIndex: "competence_display",
-							width: 150,
-							renderer: function(value) {
-								if (!value) var value="";
-								var prepend='<div style="padding:3px">';
-								var append='</div>';
-								return prepend+value+append;
-							}
-						},
-						{
-							text: "Technicien",
-							dataIndex: "attrib_nom",
-							width: 200,
-							renderer: function(value) {
-								if (!value) var value="";
-								var prepend='<div style="padding:3px">';
-								var append='</div>';
-								return prepend+value+append;
-							}
-						},
-						{
-							text: "Etat",
-							width: 90,
-							dataIndex: "state",
-							renderer: function(x) {
-								var result="";
-								var prepend='<div style="padding:3px">';
-								var append='</div>';
-								if (x==-1) result="<span style='color:red'>Sans suite</span>";
-								if (x==1) result="Posé";
-								if (x==2) result="Attribué";
-								if (x==3) result="En cours";
-								if (x==4) result="Traité";
-								if (x==5) result="Clos";
-								return prepend+result+append;
-							}
-						},
-						{
-							text: "",
-							width: 80,
-							dataIndex: "state",
-							renderer: function(value, meta, record){
-								if (value==-1) return "";
-								if(value == null){
-									value = 0;
-								};              
-								pt = (value*100/5)/100;
-								var id = Ext.id();
-								Ext.defer(function (id,pt) {
-									var p = Ext.create('Ext.ProgressBar',{
-										renderTo: id,
-										animate: true,
-										width: '100%',
-										value: pt,
-										text: (pt*100)+"%",
-									});                        
-								}, 50, undefined, [id,pt]);
-								return "<div id='" + id + "'></div>";
-							}
-						}
-					],
-					features: [
-						{
-							groupHeaderTpl: 'Département: {name}',
-							ftype: 'groupingsummary'
-						}
+					{
+						header: "worker"
+					},
+					{
+						header: "port"
+					},
+					{
+						header: "pid"
+					},
+					{
+						header: "status"
+					}
 					],					
-					store: App.store.create("App.Demandes.toutes",{
-						groupField: "agent_departement"
-					})
+					store: App.store.create({fields:[],data:[]})
 				}
 			]
 		}
