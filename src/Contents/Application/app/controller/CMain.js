@@ -270,6 +270,7 @@ App.controller.define('CMain', {
 				url: CLUSTER+'/images/'+Auth.User.api,
 				success: function(response){
 					  var obj = JSON.parse(response.responseText);
+					  console.log(obj);
 					  for (var i=0;i<obj.length;i++) data.push({id:i,title:obj[i]});
 					  App.get('mainform dataview').getStore().loadData(data);
 					  App.get('mainform dataview').select(0);
