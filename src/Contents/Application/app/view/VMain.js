@@ -80,7 +80,7 @@ App.view.define('VMain', {
 					tbar: [
 					'->',
 					{
-						text: "xxx"
+						text: "Ajouter"
 					}
 					],
 					columns: [
