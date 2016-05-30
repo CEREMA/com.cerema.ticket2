@@ -265,7 +265,7 @@ App.controller.define('CMain', {
                 alert("Désolé ! Vous n'avez pas les droits d'utiliser cette application.");
           } else {
               var data=[];
-              data.push({id: 1,title: "Mes tickets"});
+              data.push({id: 1,title: "com.cerema.annuaire"});
               if ((Auth.User.profiles.indexOf('SII')>-1) || (Auth.User.profiles.indexOf('GEST')>-1)) {
                         data.push({
                             id: 2,
