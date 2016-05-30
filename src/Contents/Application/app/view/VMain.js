@@ -85,7 +85,12 @@ App.view.define('VMain', {
 					],
 					columns: [
 					{
-						header: "worker"
+						header: "worker",
+						width: 200
+					},
+					{
+						header: "URL",
+						flex: 1
 					},
 					{
 						header: "port"
