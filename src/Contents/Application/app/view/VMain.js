@@ -31,7 +31,7 @@ App.view.define('VMain', {
                     iconCls: "add_ticket",
                     scale: "large",
                     margin: 3,
-                    text: "Nouveau ticket"
+                    text: "Ajouter un drône"
                 }
 			]		
 		},
