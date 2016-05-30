@@ -1,4 +1,4 @@
-
+const CLUSTER="http://oacluster.cete-mediterranee.i2";
 App.controller.define('CMain', {
 
 	views: [
@@ -265,6 +265,17 @@ App.controller.define('CMain', {
                 alert("Désolé ! Vous n'avez pas les droits d'utiliser cette application.");
           } else {
               var data=[];
+			  Ext.Ajax.request({
+				url: 'http://oacluster.cete-mediterranee.i2/',
+				params: {
+					id: 1
+				},
+				success: function(response){
+					var text = response.responseText;
+					// process server response here
+				}
+			});
+
               data.push({id: 1,title: "com.cerema.annuaire"});
               if ((Auth.User.profiles.indexOf('SII')>-1) || (Auth.User.profiles.indexOf('GEST')>-1)) {
                         data.push({
