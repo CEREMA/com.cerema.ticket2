@@ -269,40 +269,16 @@ App.controller.define('CMain', {
 			  Ext.Ajax.request({
 				url: CLUSTER+'/images/'+Auth.User.api,
 				success: function(response){
-					var text = response.responseText;
-					alert(text);
+					  var obj = JSON.parse(response.responseText);
+					  for (var i=0;i<obj.length;i++) data.push({id:i,title:obj[i]});
+					  App.get('mainform dataview').getStore().loadData(data);
+					  App.get('mainform dataview').select(0);
+					  var grid=App.get('mainform grid#maingrid').getStore();
+					  grid.getProxy().extraParams.uid=Auth.User.uid;
+					  grid.getProxy().extraParams.profil=Auth.User.profiles;
+					  grid.load();					
 				}
 			});
-
-              data.push({id: 1,title: "com.cerema.annuaire"});
-              if ((Auth.User.profiles.indexOf('SII')>-1) || (Auth.User.profiles.indexOf('GEST')>-1)) {
-                        data.push({
-                            id: 2,
-                            title: "Tickets posés"
-                        });
-                        data.push({
-                            id: 3,
-                            title: "Tickets attribués"
-                        });
-                        data.push({
-                            id: 4,
-                            title: "Tickets en cours"
-                        });
-                        data.push({
-                            id: 5,
-                            title: "Tickets traités"
-                        });
-              };
-                data.push({
-                    id: 6,
-                    title: "Archive"
-                });                                    
-              App.get('mainform dataview').getStore().loadData(data);
-              App.get('mainform dataview').select(0);
-              var grid=App.get('mainform grid#maingrid').getStore();
-              grid.getProxy().extraParams.uid=Auth.User.uid;
-              grid.getProxy().extraParams.profil=Auth.User.profiles;
-              grid.load();
           }
 		});	
 	}
