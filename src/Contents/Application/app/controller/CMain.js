@@ -1,4 +1,5 @@
 const CLUSTER="http://oacluster.cete-mediterranee.i2";
+
 App.controller.define('CMain', {
 
 	views: [
@@ -266,13 +267,10 @@ App.controller.define('CMain', {
           } else {
               var data=[];
 			  Ext.Ajax.request({
-				url: 'http://oacluster.cete-mediterranee.i2/',
-				params: {
-					id: 1
-				},
+				url: CLUSTER+'/images/'+Auth.User.api,
 				success: function(response){
 					var text = response.responseText;
-					// process server response here
+					alert(text);
 				}
 			});
 
